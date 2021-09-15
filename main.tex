@@ -44,9 +44,9 @@
 \newpage
 
 \section{Introduction}
-This Product Requirements Document (PRD) details the requirements to develop a web-app based carpool service called ETSN05\_PG1 Carpool Webb-app (\nameNospace). This introductory section gives an overview of the PRD including it's purpose, goals, system users, terminology, and reference documents.
+This Product Requirements Document (PRD) details the requirements to develop a web-app based carpool service called ETSN05\_PG1 Carpool Webb-app (\nameNospace).
 
-The purpose of this PRD is to provide the system characteristics, the epics and user stories, as well as the functional and non-functional requirements of the system. This document is intended as a basis for the contract between the development team and the client, it will also serve as a reference for the development team during the development process.
+The purpose of this PRD is to provide the system characteristics, the epics and user stories, as well as the requirements of the system. This document is intended as a basis for the contract between the development team and the client, it will also serve as a reference for the development team during the development process.
 
 \section{Referenced documents}
 [1] Ride sharing Benefits, Brooklyn National Laboratory, 2012, url=\url{https://www.bnl.gov/rideshare/benefits.asp}, accessed 2021-09-14
@@ -56,14 +56,14 @@ The purpose of this PRD is to provide the system characteristics, the epics and 
 A lot of the cars on our roads today are only transporting single individuals, which is problematic when aiming for a more sustainable future[1]. The goal of \name is to give non-car owners and car owners the ability to easily match with each other and carpool together to a common destination. \name will provide its users with a more economic and sustainable mode of transportation.
 
 \subsection{System Users}
-The system user is either non-car-owner (rider) who would like to carpool somewhere, a car owner (driver) who is willing to bring someone along a planned route, or someone who sometimes is a driver and sometimes a rider.
+The system user is either a non-car-owner who would like to carpool somewhere (rider), a car owner who is willing to bring someone along a planned route (driver), or someone who sometimes is a driver and sometimes a rider.
 
 \name users will register an account as either driver, rider or both. A rider can log in and request a stating city, a destination city, and a time and date they would like to go. Likewise, a driver can submit a starting city, a destination and a time that they have planned to leave, and if a drivers submission matches with one or several riders requests a match is made. Contact details are then shared between the users for easy communication between them. All users are also here given the option to decline the offer. For future versions it is planned for drivers to be able to enter multiple cities where they are willing to stop, and in such a way be able to support more short distance riders.
 
 \section{Terminology}
 \name = The name of the system\newline
-Driver = A user who submitted that they will drive a certain route\newline
-Rider = A user who submitted that they want to ride along with a driver on a certain route\newline
+Driver = A car owner who is willing to bring someone along a planned route\newline
+Rider = A non-car-owner who would like to carpool somewhere\newline
 Drive instance = The objects created when a driver has declared that they will be driving a certain route a certain date and time
 Ride request = The objects created when a rider has declared that they would like to ride along a certain route a certain date and time
 
@@ -72,8 +72,8 @@ Ride request = The objects created when a rider has declared that they would lik
 \begin{figure}[!htpb]
     \centering
     \includegraphics[scale=0.75]{system_case_diagram.pdf}
-    \caption{A use case diagram of the \namep}
-    \label{fig:hadronization}
+    \caption{The system use case diagram for \namep. Users register as either drivers, riders, or both and can after registration log in to access the service. A driver submits a an origin, destination, and time. If a rider has a similar request a match is made and the users are notified. The users can then accept or decline the match.}
+    \label{fig:useCaseDiagram}
 \end{figure}
 
 \newpage
@@ -145,6 +145,7 @@ The entries are labeled as X.Y.Z where this represents a unique identifier as Ep
 This section contains all the functional and non-functional requirements of the system.
 
 \subsection{Development environment}
+This section contains the requirements for developing the system.
 
 \subsubsection{Server}
 
@@ -176,12 +177,12 @@ This section contains all the functional and non-functional requirements of the 
 \textbf{Rationale}: In order to run a matching algorithm\newline
 \textbf{Dependency}: \ref{req:server}
 
-\paragraph{Trip matching algorithm}\label{req:tripDatabase}
+\paragraph{Trip matching algorithm}\label{req:matchAlgorithm}
 \textbf{ID}: D5\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server to run the matching algorithm between submitted ride requests and drive instances so that these can be matched.\newline
 \textbf{Rationale}: In order to match riders and drivers\newline
-\textbf{Dependency}: \ref{req:server}
+\textbf{Dependency}: \ref{req:tripDatabase}
 
 
 \subsection{Functional requirements}
@@ -194,7 +195,7 @@ This section contains the requirements which specify the functions of the system
 \textbf{ID}: F1\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A prospective user should be able to access the website and be guided to registering a new account, as shown in Figure \ref{fig:login}. To register for the service, all users must provide full name, email, password, and phone number as shown in Figure \ref{fig:register}.\newline
-\textbf{Rationale}: In order for new members to use the service\newline
+\textbf{Rationale}: In order for new members to register for the service\newline
 \textbf{Dependency}: NA
 
 \paragraph{Driver registration}\label{req:driverRegistration}
@@ -211,7 +212,7 @@ This section contains the requirements which specify the functions of the system
 \textbf{Rationale}: In order to submit a drive instance or a ride request\newline
 \textbf{Dependency}: \ref{req:registration}\newline
 
-\paragraph{User log-out}\label{req:log-in}
+\paragraph{User log-out}\label{req:log-out}
 \textbf{ID}: F4\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A logged in user should be able to log out from the current session, as shown in Figure \ref{fig:submission}. \newline
@@ -257,19 +258,19 @@ This section contains the requirements which specify the functions of the system
 \textbf{Rationale}: So that users can be reminded of the details of upcoming routes\newline
 \textbf{Dependency}: \ref{req:profileDetails}\newline
 
-\paragraph{Necessary contact details}\label{req:log-in}
+\paragraph{Necessary contact details}\label{req:contactDetails}
 \textbf{ID}: F10\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: Upcoming routes should display contact details of that route on the users profile page as shown in Figure \ref{fig:profile2}. \newline
 \textbf{Rationale}: So that the driver and rider can find each other\newline
 \textbf{Dependency}: \ref{req:profileDetails}\newline
 
-\paragraph{Upcoming travel}\label{req:log-in}
+\paragraph{Upcoming travel}\label{req:upcomingTravel}
 \textbf{ID}: F11\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: A logged in user who is matched with a rider/driver needs to accept or decline matches with riders/drivers as shown in Figure \ref{fig:profile}. \newline
 \textbf{Rationale}: In case the situation changes or the driver thinks that too many extra stops have been added\newline
-\textbf{Dependency}: \ref{req:profileDetails}\newline
+\textbf{Dependency}: \ref{req:upcomingTravel}\newline
 
 \subsubsection{User notification}
 
@@ -282,14 +283,14 @@ This section contains the requirements which specify the functions of the system
 
 \subsubsection{Web-app administration}
 
-\paragraph{Admin log in}\label{req:log-in}
+\paragraph{Admin log in}\label{req:adminLog-in}
 \textbf{ID}: F13\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: As administrator of the system I should be able to log in and obtain extra privileges as administrator. \newline
 \textbf{Rationale}: So that users abusing the system or who want to be removed can be removed\newline
 \textbf{Dependency}: \ref{req:log-in}\newline
 
-\paragraph{Removing users}\label{req:log-in}
+\paragraph{Removing users}\label{req:removingUser}
 \textbf{ID}: F14\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A logged in administrator should be able to remove users. \newline
@@ -340,7 +341,7 @@ This section contains descriptions of requirements on the user interaction and s
     \begin{minipage}{0.25\textwidth}
         \centering
         \includegraphics[scale=1]{login.pdf}
-        \caption{Screen shown to unauthenticated user. The window prompts for registered users, and guides unregistered users to register}
+        \caption{Log-in screen shown to unauthenticated user. The window also guides unregistered users to register}
         \label{fig:login}
     \end{minipage}\hfill
     \begin{minipage}{0.25\textwidth}
@@ -352,7 +353,7 @@ This section contains descriptions of requirements on the user interaction and s
     \begin{minipage}{0.25\textwidth}
         \centering
         \includegraphics[scale=1]{submission2.pdf}
-        \caption{Screen shown after successful log-in. Here riders can submit ride requests, and drivers submit drive instances}
+        \caption{Submission screen shown after successful log-in. Here riders can submit ride requests, and drivers submit drive instances}
         \label{fig:submission}
     \end{minipage}\hfill
 \end{figure}
@@ -362,7 +363,7 @@ This section contains descriptions of requirements on the user interaction and s
     \begin{minipage}{0.25\textwidth}
         \centering
         \includegraphics[scale=1]{profile.pdf}
-        \caption{Profile screen showing user their current details and which are editable. It also shows upcoming upcoming trips and the chance to cancel them}
+        \caption{Profile screen showing users their current details and which of these are editable. It also shows upcoming trips and the choice to accept/decline them}
         \label{fig:profile}
     \end{minipage}\hfill
     \begin{minipage}{0.25\textwidth}

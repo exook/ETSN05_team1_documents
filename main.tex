@@ -4,6 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{ulem}
 
 \usepackage{titlesec}
 \setcounter{secnumdepth}{4}
@@ -25,14 +26,14 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-\lhead{ Responsible: Alexander Ekman \& Linnea Johnsson \\ Date: \today}  \rhead{Document number: SRS \\ Version: 1.0}
+\lhead{ Responsible: Alexander Ekman \& Linnea Johnsson \\ Date: \today}  \rhead{Document number: PRD \\ Version: 1.0}
 \renewcommand{\headrulewidth}{0.5pt} 
 
 
 
-%\title{PRD - Product Requirements Document}
+\title{PRD - Product Requirements Document}
 %\title{Submodule test}
-\title{Submodule test2}
+%\title{Submodule test2}
 \author{Team 1}
 
 \begin{document}
@@ -43,19 +44,72 @@
 \newpage
 
 \tableofcontents
+%\newpage
+
+\section*{Revision history}
+%\begin{center}
+\begin{tabular}{ |c|c|l| } 
+ \hline
+ Version & Date & Reason \\ \hline
+ 1.0 & 2021-09-15 & First draft \\ 
+ 1.1 & 2021-09-15 & Fixed typos from team feedback \\ 
+ 1.11 & 2021-09-20 &  Added SDP and PH book to reference documents\\
+ \hline
+\end{tabular}
+%\end{center}
+
 \newpage
+\section{Feedback}
+\begin{itemize}
+    \item 11: \sout{In section "revision history": Were there earlier versions of the document, that were revised per the team members' feedback?}
+    \item 14: In section 2:
+    \begin{itemize}
+        \item Move referenced documents section before Introduction section.
+        \item Reference PH Book (Uppdragbeskrivning)
+        \item Reference SDP
+    \end{itemize}
+    \item 15: section 1: Reference PH Book Chapter 9
+    \item 16: section 3.2: Admin user not discussed
+    \item 17: section 4: Admin user not discussed
+    \item 18: Section 5:
+    \begin{itemize}
+        \item -Please do not deviate from UML standard when creating system use case diagram. You can draw by hand, use limited free version of Omni Graffle, StarUML... Please see example in exercise 1.2. Take advantage of <<uses>> tag.
+        \item Can Driver and Rider edit registered ride request or trip?
+        \item Can Driver edit vehicle information?
+    \end{itemize}
+    \item 20: section 7.2: Connect requirements to user stories
+    \item 21: section 7.2.1 Which non-functional requirement characteristic can requirements under 7.3 section be grouped under (performance, reliability, usability, portability...)? Can you add more non- functional requirements?
+    \item 22: Which technology will you be using (Base system server...) Development ID, any test suites (e.g. Junit), version control (Gitlab)... ?
+    \item 24: Discuss the destinations given in BASE?
+    \item 25: SPF1: Prioritize issues
+    \item 26: SP1: Something was discussed
+\end{itemize}
+
+Questions
+\begin{itemize}
+    \item What are we supposed to reference from the SDP in the PRD?
+\end{itemize}
+
+\newpage
+
+\section{Referenced documents}
+\begin{thebibliography}{widest entry}
+    \bibitem{BNL} "Ride sharing Benefits, Brooklyn National Laboratory", 2012, url=\url{https://www.bnl.gov/rideshare/benefits.asp}, accessed 2021-09-14
+    
+    \bibitem{PH} "Programvaruutveckling för Stora System Projekthandledning 2021", Institutionen för Datavetenskap Lunds Tekniska Högskola, Lunds Universitet, 26 August 2021
+    
+    \bibitem{SDP} "SDP - Software Development Plan, Team 1 - ETSN05", Alexander Ekman and Linnea Johnsson, url=\url{https://www.overleaf.com/read/bvbkjmdrkpdx}, accessed \today
+    
+\end{thebibliography}
 
 \section{Introduction}
 This Product Requirements Document (PRD) details the requirements to develop a web-app based carpool service called ETSN05\_PG1 Carpool Webb-app (\nameNospace).
 
 The purpose of this PRD is to provide the system characteristics, the epics and user stories, as well as the requirements of the system. This document is intended as a basis for the contract between the development team and the client, it will also serve as a reference for the development team during the development process.
 
-\section{Referenced documents}
-[1] Ride sharing Benefits, Brooklyn National Laboratory, 2012, url=\url{https://www.bnl.gov/rideshare/benefits.asp}, accessed 2021-09-14
-
 \section{Background and product goals}
 \subsection{Purpose}
-A lot of the cars on our roads today are only transporting single individuals, which is problematic when aiming for a more sustainable future[1]. The goal of \name is to give non-car owners and car owners the ability to easily match with each other and carpool together to a common destination. \name will provide its users with a more economic and sustainable mode of transportation.
+A lot of the cars on our roads today are only transporting single individuals, which is problematic when aiming for a more sustainable future ~\cite{BNL}. The goal of \name is to give non-car owners and car owners the ability to easily match with each other and carpool together to a common destination. \name will provide its users with a more economic and sustainable mode of transportation.
 
 \subsection{System Users}
 The system user is either a non-car-owner who would like to carpool somewhere (rider), a car owner who is willing to bring someone along a planned route (driver), or someone who sometimes is a driver and sometimes a rider.

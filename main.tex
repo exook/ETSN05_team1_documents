@@ -53,23 +53,24 @@
  Version & Date & Reason \\ \hline
  1.0 & 2021-09-15 & First draft \\ 
  1.1 & 2021-09-15 & Fixed typos from team feedback \\ 
- 1.11 & 2021-09-20 &  Added SDP and PH book to reference documents\\
+ 1.11 & 2021-09-20 & Added references to SDP and PH book\\
+ 1.12 & 2021-09-20 & Added clients product description to introduction and system user section \\
  \hline
 \end{tabular}
 %\end{center}
 
 \newpage
-\section{Feedback}
+\section*{Feedback}
 \begin{itemize}
     \item 11: \sout{In section "revision history": Were there earlier versions of the document, that were revised per the team members' feedback?}
-    \item 14: In section 2:
+    \item 14: \sout{In section 2:}
     \begin{itemize}
-        \item Move referenced documents section before Introduction section.
-        \item Reference PH Book (Uppdragbeskrivning)
-        \item Reference SDP
+        \item \sout{Move referenced documents section before Introduction section.}
+        \item \sout{Reference PH Book (Uppdragbeskrivning)}
+        \item \sout{Reference SDP}
     \end{itemize}
-    \item 15: section 1: Reference PH Book Chapter 9
-    \item 16: section 3.2: Admin user not discussed
+    \item 15: \sout{section 1: Reference PH Book Chapter 9}
+    \item 16: \sout{section 3.2: Admin user not discussed}
     \item 17: section 4: Admin user not discussed
     \item 18: Section 5:
     \begin{itemize}
@@ -88,6 +89,7 @@
 Questions
 \begin{itemize}
     \item What are we supposed to reference from the SDP in the PRD?
+    \item Do I directly reference chapter 9?
 \end{itemize}
 
 \newpage
@@ -102,10 +104,14 @@ Questions
     
 \end{thebibliography}
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 This Product Requirements Document (PRD) details the requirements to develop a web-app based carpool service called ETSN05\_PG1 Carpool Webb-app (\nameNospace).
 
 The purpose of this PRD is to provide the system characteristics, the epics and user stories, as well as the requirements of the system. This document is intended as a basis for the contract between the development team and the client, it will also serve as a reference for the development team during the development process.
+
+As stated in the clients product description\cite{PH}, \name will be a web-application for a carpool service. Users will set an origin, destination, time and date, for a car trip and be notified which car to go with. If the user is a driver, they should be able to go into the system, declare origin, destination, data and time, and be notified of any passengers joining the carpool. The system should find a reasonable distribution of passengers into the avaliable rides. In the simplest scenario, the system finds riders and drivers with the same origin, destination and time. In a more advanced scenario, the system can create rides where riders have different destinations along the same route. For example, one driver can drive between Malmö and Helsingborg with two passengers, where one rides along the whole route, and the other only rides along between Malmö and Landskrona. The system doesn't necessarily feature a map, but can utilize a list of addresses or cities from which users choose origin and destination. Users of the system need to register before using it. They will also declare if they are riders, drivers, or both. There should also be functionality for an administrative user, which can for example remove registered users. The system should also be able to handle abnormal behaviour from users without crashing or freezing. Multiple users should be able to use the system in paralell.
+
+There ares some topics left for the development team to work out, for example what cities are available, how a destination is defined to be "en rute", how riders and drivers are matched, and how they are notified.
 
 \section{Background and product goals}
 \subsection{Purpose}
@@ -114,7 +120,9 @@ A lot of the cars on our roads today are only transporting single individuals, w
 \subsection{System Users}
 The system user is either a non-car-owner who would like to carpool somewhere (rider), a car owner who is willing to bring someone along a planned route (driver), or someone who sometimes is a driver and sometimes a rider.
 
-\name users will register an account as either driver, rider or both. A rider can log in and request a stating city, a destination city, and a time and date they would like to go. Likewise, a driver can submit a starting city, a destination and a time that they have planned to leave, and if a drivers submission matches with one or several riders requests a match is made. Contact details are then shared between the users for easy communication between them. All users are also here given the option to decline the offer. For future versions it is planned for drivers to be able to enter multiple cities where they are willing to stop, and in such a way be able to support more short distance riders.
+Based on the clients product description~\cite{PH}, \name users will register an account as either driver, rider or both. During registration, they will provide some contact details, and drivers will provide details of their car. These details will be possible to edit later. A rider can log in and request a starting city, a destination city, and a time and date they would like to go. Likewise, a driver can submit a starting city, a destination and a time that they have planned to leave, and if a drivers submission matches with one or several riders requests a match is made. Contact details are then shared between the users for easy communication between them. All users are also here given the option to decline the offer. For future versions it is planned for drivers to be able to enter multiple cities where they are willing to stop, and in such a way be able to support more short distance riders.
+
+As specified in Section \ref{sec:intro} and the clients product description\cite{PH}, \name will support an administrator as a third user type. This admin user should have the ability to add registered users. In order to help with functionality testing during the product development, this administrator will also have the ability to create "fake" users and edit their profile details.
 
 \section{Terminology}
 \name = The name of the system\newline

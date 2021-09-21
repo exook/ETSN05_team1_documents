@@ -80,12 +80,13 @@
         \item Can Driver and Rider edit registered ride request or trip?
         \item Can Driver edit vehicle information?
     \end{itemize}
-    \item 20: section 7.2: Connect requirements to user stories
+    \item 20: \sout{section 7.2: Connect requirements to user stories}
     \item 21: section 7.2.1 Which non-functional requirement characteristic can requirements under 7.3 section be grouped under (performance, reliability, usability, portability...)? Can you add more non- functional requirements?
     \item 22: Which technology will you be using (Base system server...) Development ID, any test suites (e.g. Junit), version control (Gitlab)... ?
     \item 24: Discuss the destinations given in BASE?
     \item 25: SPF1: Prioritize issues
     \item 26: SP1: Something was discussed
+    \item extra: Expand Product backlog to better fit the requirements
 \end{itemize}
 
 Questions
@@ -387,11 +388,10 @@ This section contains the requirements which specify the functions of the system
 \subsection{Non-functional requirements}
 This section contains descriptions of requirements on the user interaction and system performance.
 
-
-\subsubsection{Log in}
+\subsubsection{Performance requirements}
 
 \paragraph{Entering correct username and password}\label{req:}
-\textbf{ID}: NF1\newline
+\textbf{ID}: Per1\newline
 \textbf{User Story ID}: *\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: A user who enters a correct username and password, once pressing the "log in" button, should not wait longer than 2 seconds to see the submission page shown in Figure \ref{fig:submission}\newline
@@ -399,26 +399,97 @@ This section contains descriptions of requirements on the user interaction and s
 \textbf{Dependency}: \ref{req:log-in} \newline
 
 \paragraph{Entering incorrect username and password}\label{req:}
-\textbf{ID}: NF2\newline
+\textbf{ID}: Per2\newline
 \textbf{User Story ID}: *\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: A user who enters an incorrect username and password, once pressing the "log in" button, should not wait longer than 2 seconds to be prompted for another attempt \ref{fig:submission}\newline
 \textbf{Rationale}: Users should not wait to long to use the service\newline
 \textbf{Dependency}: \ref{req:log-in} \newline
 
-
-\subsubsection{User notifications}
-
 \paragraph{Notification of new match}\label{req:}
-\textbf{ID}: NF3\newline
+\textbf{ID}: Per3\newline
 \textbf{User Story ID}: *\newline
 \textbf{Priority}: LOW\newline
 \textbf{Description}: After a driver/rider is matched, their profile pages should update accordingly within 10 seconds\newline
 \textbf{Rationale}: Avoiding clashes in user actions\newline
 \textbf{Dependency}: \ref{req:matchNotification} \newline
 
+\subsubsection{Reliability requirements}
+
+\paragraph{User input}\label{req:}
+\textbf{ID}: R1\newline
+\textbf{User Story ID}:* \newline
+\textbf{Priority}: MEDIUM\newline
+\textbf{Description}: The webb-app should not crash or freeze due to user input\newline
+\textbf{Rational}: So that users can reliably use the system\newline
+\textbf{Dependency}: \newline
+
+\subsubsection{Memory requirements}
+
+\paragraph{Memory usage}\label{req:}
+\textbf{ID}: M1 \newline
+\textbf{User Story ID}: \newline
+\textbf{Priority}: MEDIUM\newline
+\textbf{Description}: Running the web-app should never require more than 512 MB of memory from the users browser\newline
+\textbf{Rational}: We want users with low end devices to be able to use the service\newline
+\textbf{Dependency}: \newline
+
+\subsubsection{Usability requirements}
+
+\paragraph{Browser Back and forward button}\label{req:}
+\textbf{ID}: U1\newline
+\textbf{User Story ID}:* \newline
+\textbf{Priority}: LOW\newline
+\textbf{Description}: A user using the back or forward button in their browser should be directed as expected. For example, a user on the submission screen pressing "Profile" as seen in Figure \ref{fig:submission} should be taken to the profile page seen in Figure \ref{fig:profile}. If the user presses "back" in their browser, they should be taken to the submission page. If the users presses forward after this, they are taken to their profile page.\newline
+\textbf{Rational}: Having dysfunctional and unsupported navigation gives web-applications a very bad reputation and makes users frustrated\newline
+\textbf{Dependency}: \newline
+
+\paragraph{Multiple users}\label{req:}
+\textbf{ID}: U2\newline
+\textbf{User Story ID}:* \newline
+\textbf{Priority}: HIGH\newline
+\textbf{Description}: Multiple users should be able to be logged in and use the system features in parallel\newline
+\textbf{Rational}: This greatly increases the usability and efficiency of the system\newline
+\textbf{Dependency}: \newline
+
+\paragraph{User browser and operating system}\label{req:}
+\textbf{ID}: U3\newline
+\textbf{User Story ID}:* \newline
+\textbf{Priority}: LOW\newline
+\textbf{Description}: The system should work the same for users using Microsoft Edge, Google Chrome, Mozilla Firefox, or Safari web browsers. It should also be independent from their operating system\newline
+\textbf{Rational}: If we discriminate one browser or operating system we risk missing out of ~20\% of the user base\newline
+\textbf{Dependency}: \newline
+
+\paragraph{Mobile support}\label{req:}
+\textbf{ID}: U4\newline
+\textbf{User Story ID}: \newline
+\textbf{Priority}: LOW\newline
+\textbf{Description}: Users should be able to use the web-app from their mobile devices without suffereing from decreased usability compared to using a PC\newline
+\textbf{Rational}: Most users will be on the go and require a good mobile user support\newline
+\textbf{Dependency}: \newline
+
+\subsubsection{Portability requirements}
+
+\paragraph{Remote/local host}\label{req:}
+\textbf{ID}: Por1\newline
+\textbf{User Story ID}: \newline
+\textbf{Priority}: HIGH\newline
+\textbf{Description}: The system should be able to run in full on a local or remote host\newline
+\textbf{Rational}: Enabling the system to run on a local host will make the distributed development simpler\newline
+\textbf{Dependency}: \newline
+
+\paragraph{Host operating system}\label{req:}
+\textbf{ID}: Por2\newline
+\textbf{User Story ID}: \newline
+\textbf{Priority}: HIGH\newline
+\textbf{Description}: The system should support a host server of either Windows, Mac, or Linux\newline
+\textbf{Rational}: Enabling the system server to be hosted on multiple OS makes it easier for development and distribution to client\newline
+\textbf{Dependency}: \newline
 
 %\paragraph{}\label{req:}
+%\textbf{ID}: \newline
+%\textbf{User Story ID}: \newline
+%\textbf{Priority}: \newline
 %\textbf{Description}: \newline
 %\textbf{Rational}: \newline
 %\textbf{Dependency}: \newline

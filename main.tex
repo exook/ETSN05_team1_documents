@@ -57,6 +57,8 @@
  1.12 & 2021-09-20 & Added clients product description to introduction and system user section \\
  1.13 & 2021-09-20 & Added description of admin under Terminology Section\\
  1.14 & 2021-09-21 & Linked requirements to user from pre-sprint 1\\
+ 1.15 & 2021-09-21 & Added more categories of non-functional requirements\\
+ 1.16 & 2021-09-21 & Added technological requirements\\
  \hline
 \end{tabular}
 %\end{center}
@@ -81,7 +83,7 @@
         \item Can Driver edit vehicle information?
     \end{itemize}
     \item 20: \sout{section 7.2: Connect requirements to user stories}
-    \item 21: section 7.2.1 Which non-functional requirement characteristic can requirements under 7.3 section be grouped under (performance, reliability, usability, portability...)? Can you add more non- functional requirements?
+    \item 21: \sout{section 7.2.1 Which non-functional requirement characteristic can requirements under 7.3 section be grouped under (performance, reliability, usability, portability...)? Can you add more non- functional requirements?}
     \item 22: Which technology will you be using (Base system server...) Development ID, any test suites (e.g. Junit), version control (Gitlab)... ?
     \item 24: Discuss the destinations given in BASE?
     \item 25: SPF1: Prioritize issues
@@ -212,51 +214,76 @@ The entries are labeled as X.Y.Z where this represents a unique identifier as Ep
 \section{Project Requirements}
 This section contains all the functional and non-functional requirements of the system. Requirements associated to a user story ID marked with an asterisk (*) means that this requirement does not yet have a properly defined user story. This is because the requirements were defined after the first sprint started.
 
-\subsection{Development environment}
-This section contains the requirements for developing the system.
+\subsection{Technological requirements}
 
-\subsubsection{Server}
+\subsubsection{Front-end}
 
-\paragraph{Host}\label{req:server}
-\textbf{ID}: D1\newline
-\textbf{User Story ID}: 1.1.0\newline
+\paragraph{HTML, CSS}\label{req:hostingLogin}
+\textbf{ID}: T1\newline
+\textbf{User Story ID}:*\newline
 \textbf{Priority}: HIGH\newline
-\textbf{Description}: This project requires a server to host the web-app.\newline
-\textbf{Rationale}: So that there is a website for the web-app\newline
-\textbf{Dependency}: NA
+\textbf{Description}: This project requires a server to host HTML and CSS code\newline
+\textbf{Rationale}: In order to display contents to the users of the web-app\newline
+\textbf{Dependency}:
 
-\paragraph{HTML, CSS, and JavaScript}\label{req:hostingLogin}
-\textbf{ID}: D2\newline
-\textbf{User Story ID}: 1.1.0\newline
+\paragraph{JavaScript}\label{req:}
+\textbf{ID}: T2\newline
+\textbf{User Story ID}: \newline
 \textbf{Priority}: HIGH\newline
-\textbf{Description}: This project requires a server to host HTML, CSS, and JavaScript for the user to interact with the system.\newline
-\textbf{Rationale}: In order for users to use the system\newline
-\textbf{Dependency}: \ref{req:server}
+\textbf{Description}: This project requires a server to host JavaScript code\newline
+\textbf{Rational}: JavaScript is necessary for the users interaction with the web-app and for web-app to dynamically change the contents shown to the user according to their actions\newline
+\textbf{Dependency}: \newline
 
-\paragraph{Registered users and login}\label{req:hostingLogin}
-\textbf{ID}: D3\newline
-\textbf{User Story ID}: 1.1.0\newline
+\paragraph{Bootstrap}\label{req:}
+\textbf{ID}: T3\newline
+\textbf{User Story ID}:* \newline
 \textbf{Priority}: HIGH\newline
-\textbf{Description}: This project requires a server to host login details and profile information from the registration.\newline
-\textbf{Rationale}: In order to have user logins and keep profile information\newline
-\textbf{Dependency}: \ref{req:server}
+\textbf{Description}: This project requires a server with support for bootstarp\newline
+\textbf{Rational}: This makes the CSS and JavaScript development simpler, and gives the web-app a more modern look\newline
+\textbf{Dependency}: \newline
 
-\paragraph{Trip database}\label{req:tripDatabase}
-\textbf{ID}: D4\newline
+\subsubsection{Back-end}
+
+\paragraph{BASE server}\label{req:}
+\textbf{ID}: T4\newline
+\textbf{User Story ID}:* \newline
+\textbf{Priority}: HIGH\newline
+\textbf{Description}: The core of the system requires a server running the BASE system, provided as a part of the ETSN05 course at Lund University, faculty of engineering\newline
+\textbf{Rational}: The BASE system provides the core front-end and back-end functionality for the web-app. This includes user registration, requests, admin user etc.\newline
+\textbf{Dependency}: \newline
+
+\paragraph{SQL Trip database}\label{req:tripDatabase}
+\textbf{ID}: T5\newline
 \textbf{User Story ID}: 2.1.0\newline
 \textbf{Priority}: HIGH\newline
-\textbf{Description}: This project requires a server to host the submitted ride requests and drive instances so that these can be matched.\newline
+\textbf{Description}: This project requires a server to host the submitted ride requests and drive instances in an SQL database so that these can be matched.\newline
 \textbf{Rationale}: In order to run a matching algorithm\newline
 \textbf{Dependency}: \ref{req:server}
 
 \paragraph{Trip matching algorithm}\label{req:matchAlgorithm}
-\textbf{ID}: D5\newline
+\textbf{ID}: T6\newline
 \textbf{User Story ID}: 3.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server to run the matching algorithm between submitted ride requests and drive instances so that these can be matched.\newline
 \textbf{Rationale}: In order to match riders and drivers\newline
 \textbf{Dependency}: \ref{req:tripDatabase}
 
+\subsubsection{Version control}
+\paragraph{Version control and issue tracking}\label{req:}
+\textbf{ID}: T7\newline
+\textbf{User Story ID}:* \newline
+\textbf{Priority}: HIGH\newline
+\textbf{Description}: During development, the development team will use GitLab for both version control and issue tracking\newline
+\textbf{Rational}: Version control and issue tracking is essential to the development and Lund University has an educational licence\newline
+\textbf{Dependency}: \newline
+
+%\paragraph{}\label{req:}
+%\textbf{ID}: \newline
+%\textbf{User Story ID}: \newline
+%\textbf{Priority}: \newline
+%\textbf{Description}: \newline
+%\textbf{Rational}: \newline
+%\textbf{Dependency}: \newline
 
 \subsection{Functional requirements}
 This section contains the requirements which specify the functions of the system.

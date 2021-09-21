@@ -56,6 +56,7 @@
  1.11 & 2021-09-20 & Added references to SDP and PH book\\
  1.12 & 2021-09-20 & Added clients product description to introduction and system user section \\
  1.13 & 2021-09-20 & Added description of admin under Terminology Section\\
+ 1.14 & 2021-09-21 & Linked requirements to user from pre-sprint 1\\
  \hline
 \end{tabular}
 %\end{center}
@@ -72,7 +73,7 @@
     \end{itemize}
     \item 15: \sout{section 1: Reference PH Book Chapter 9}
     \item 16: \sout{section 3.2: Admin user not discussed}
-    \item 17: section 4: Admin user not discussed
+    \item 17: \sout{section 4: Admin user not discussed}
     \item 18: Section 5:
     \begin{itemize}
         \item -Please do not deviate from UML standard when creating system use case diagram. You can draw by hand, use limited free version of Omni Graffle, StarUML... Please see example in exercise 1.2. Take advantage of <<uses>> tag.
@@ -217,6 +218,7 @@ This section contains the requirements for developing the system.
 
 \paragraph{Host}\label{req:server}
 \textbf{ID}: D1\newline
+\textbf{User Story ID}: 1.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server to host the web-app.\newline
 \textbf{Rationale}: So that there is a website for the web-app\newline
@@ -224,6 +226,7 @@ This section contains the requirements for developing the system.
 
 \paragraph{HTML, CSS, and JavaScript}\label{req:hostingLogin}
 \textbf{ID}: D2\newline
+\textbf{User Story ID}: 1.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server to host HTML, CSS, and JavaScript for the user to interact with the system.\newline
 \textbf{Rationale}: In order for users to use the system\newline
@@ -231,6 +234,7 @@ This section contains the requirements for developing the system.
 
 \paragraph{Registered users and login}\label{req:hostingLogin}
 \textbf{ID}: D3\newline
+\textbf{User Story ID}: 1.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server to host login details and profile information from the registration.\newline
 \textbf{Rationale}: In order to have user logins and keep profile information\newline
@@ -238,6 +242,7 @@ This section contains the requirements for developing the system.
 
 \paragraph{Trip database}\label{req:tripDatabase}
 \textbf{ID}: D4\newline
+\textbf{User Story ID}: 2.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server to host the submitted ride requests and drive instances so that these can be matched.\newline
 \textbf{Rationale}: In order to run a matching algorithm\newline
@@ -245,6 +250,7 @@ This section contains the requirements for developing the system.
 
 \paragraph{Trip matching algorithm}\label{req:matchAlgorithm}
 \textbf{ID}: D5\newline
+\textbf{User Story ID}: 3.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server to run the matching algorithm between submitted ride requests and drive instances so that these can be matched.\newline
 \textbf{Rationale}: In order to match riders and drivers\newline
@@ -259,6 +265,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{User registration}\label{req:registration}
 \textbf{ID}: F1\newline
+\textbf{User Story ID}: 1.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A prospective user should be able to access the website and be guided to registering a new account, as shown in Figure \ref{fig:login}. To register for the service, all users must provide full name, email, password, and phone number as shown in Figure \ref{fig:register}.\newline
 \textbf{Rationale}: In order for new members to register for the service\newline
@@ -266,6 +273,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Driver registration}\label{req:driverRegistration}
 \textbf{ID}: F2\newline
+\textbf{User Story ID}: 1.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A prospective user registering as a driver, or a rider and a driver must also register car brand, model, color, and licence plate number. This will be in addition to what is shown in Figure \ref{fig:register}\newline
 \textbf{Rationale}: So that the driver is easily identifiable when picking up riders\newline
@@ -273,6 +281,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{User log-in}\label{req:log-in}
 \textbf{ID}: F3\newline
+\textbf{User Story ID}: 1.1.0*\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A registered use should be able to log in using their email and password as shown in Figure \ref{fig:login}. \newline
 \textbf{Rationale}: In order to submit a drive instance or a ride request\newline
@@ -280,6 +289,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{User log-out}\label{req:log-out}
 \textbf{ID}: F4\newline
+\textbf{User Story ID}: 1.1.0*\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A logged in user should be able to log out from the current session, as shown in Figure \ref{fig:submission}. \newline
 \textbf{Rationale}: In order to close a session\newline
@@ -289,6 +299,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Drive instance submission}\label{req:driveInstance}
 \textbf{ID}: F5\newline
+\textbf{User Story ID}: 2.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A logged in driver should be able to submit a drive instance by selecting an origin, a destination, and a time and date for departure as shown in Figure \ref{fig:submission}. \newline
 \textbf{Rationale}: In order to show that a car is available on this route at this time\newline
@@ -296,6 +307,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Ride request submission}\label{req:rideRequest}
 \textbf{ID}: F6\newline
+\textbf{User Story ID}: 2.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A logged in rider should be able to submit a ride request by selecting an origin, a destination, and a time and date for departure as shown in Figure \ref{fig:submission}. \newline
 \textbf{Rationale}: In order to show that someone wants a ride on this route at this time\newline
@@ -303,6 +315,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Dual user submission}\label{req:dualSubmission}
 \textbf{ID}: F7\newline
+\textbf{User Story ID}: 2.1.0\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: A logged in user registered as both rider and driver should be able to submit either a ride request or diver instance by specifying if they are driving or riding as shown in Figure \ref{fig:submission}. \newline
 \textbf{Rationale}: In order for driver and rider users to specify which type of user they are for this submission\newline
@@ -312,6 +325,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Profile details}\label{req:profileDetails}
 \textbf{ID}: F8\newline
+\textbf{User Story ID}: 1.1.0*\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: A logged in user should be able to see and edit some of their profile details as shown in Figure \ref{fig:profile}. \newline
 \textbf{Rationale}: In order for users to update their details in case they change\newline
@@ -319,6 +333,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Upcoming travel}\label{req:upcomingTravel}
 \textbf{ID}: F9\newline
+\textbf{User Story ID}: 4.1.0*\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A logged in user who is matched with a rider/driver should see the upcoming routes and details of that route on their profile page as shown in Figure \ref{fig:profile} and Figure \ref{fig:profile2}. \newline
 \textbf{Rationale}: So that users can be reminded of the details of upcoming routes\newline
@@ -326,6 +341,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Necessary contact details}\label{req:contactDetails}
 \textbf{ID}: F10\newline
+\textbf{User Story ID}: 4.1.0*\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: Upcoming routes should display contact details of that route on the users profile page as shown in Figure \ref{fig:profile2}. \newline
 \textbf{Rationale}: So that the driver and rider can find each other\newline
@@ -333,6 +349,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Upcoming travel}\label{req:upcomingTravel}
 \textbf{ID}: F11\newline
+\textbf{User Story ID}: 4.2.0 \& 4.3.0\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: A logged in user who is matched with a rider/driver needs to accept or decline matches with riders/drivers as shown in Figure \ref{fig:profile}. \newline
 \textbf{Rationale}: In case the situation changes or the driver thinks that too many extra stops have been added\newline
@@ -342,6 +359,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Match notification}\label{req:matchNotification}
 \textbf{ID}: F12\newline
+\textbf{User Story ID}: 4.1.0\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: When a user is matched with a driver/rider they should be notified in the web app as shown in Figure \ref{fig:submission} and Figure \ref{fig:profile3}. \newline
 \textbf{Rationale}: So that users don't miss successful matches\newline
@@ -351,6 +369,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Admin log in}\label{req:adminLog-in}
 \textbf{ID}: F13\newline
+\textbf{User Story ID}: 5.1.0*\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: As administrator of the system I should be able to log in and obtain extra privileges as administrator. \newline
 \textbf{Rationale}: So that users abusing the system or who want to be removed can be removed\newline
@@ -358,6 +377,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{Removing users}\label{req:removingUser}
 \textbf{ID}: F14\newline
+\textbf{User Story ID}: 5.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A logged in administrator should be able to remove users. \newline
 \textbf{Rationale}: So that users abusing the system or who want to be removed can be removed\newline
@@ -372,6 +392,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Entering correct username and password}\label{req:}
 \textbf{ID}: NF1\newline
+\textbf{User Story ID}: *\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: A user who enters a correct username and password, once pressing the "log in" button, should not wait longer than 2 seconds to see the submission page shown in Figure \ref{fig:submission}\newline
 \textbf{Rationale}: Users should not wait to long to use the service\newline
@@ -379,6 +400,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Entering incorrect username and password}\label{req:}
 \textbf{ID}: NF2\newline
+\textbf{User Story ID}: *\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: A user who enters an incorrect username and password, once pressing the "log in" button, should not wait longer than 2 seconds to be prompted for another attempt \ref{fig:submission}\newline
 \textbf{Rationale}: Users should not wait to long to use the service\newline
@@ -389,6 +411,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Notification of new match}\label{req:}
 \textbf{ID}: NF3\newline
+\textbf{User Story ID}: *\newline
 \textbf{Priority}: LOW\newline
 \textbf{Description}: After a driver/rider is matched, their profile pages should update accordingly within 10 seconds\newline
 \textbf{Rationale}: Avoiding clashes in user actions\newline

@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+%{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+{0pt}{1.0ex plus 1ex minus .2ex}{0.1ex plus .2ex}
+
+\newcommand{\name}{ECW\ }
+\newcommand{\nameNospace}{ECW}
+\newcommand{\namep}{ECW.}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}}
+\renewcommand{\theenumiii}{\theenumii.\arabic{enumiii}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{ Responsible: Alexander Ekman, Linnea Johnsson, \& David Ravanelli \\ Date: \today}  \rhead{Document number: SP1 \\ Version: 1.1}
+\renewcommand{\headrulewidth}{0.5pt} 
+
+
+
+\title{SP 1}
+%\title{Submodule test}
+%\title{Submodule test2}
+\author{Team 1}
+
+\begin{document}
+
+\date{}
+\maketitle
+\thispagestyle{fancy}
+
+\section*{Revision history}
+%\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Version & Date & Reason \\ \hline
+ 1.0 & 2021-09-08 & First draft \\ 
+ 1.1 & 2021-09-08 & Added priority to each user story and issue \\ 
+ \hline
+\end{tabular}
+%\end{center}
+
+\newpage
+\section{Sprint Backlog 1}
+The entries are labeled as X.Y.Z where this represents a unique identifier as Epic.Story.Issue. Each entry ends with an hourly estimate in bold.
+\begin{enumerate}
+  
+  \item User registration and authentication
+  \begin{enumerate}
+    \item As a user, I can register for the service as rider, drivers, or both (HIGH)
+    \begin{enumerate}
+        \item All users register full name, email, and phone number (HIGH) \textbf{10h}
+        \item If a user is a driver, they register car brand, model, color, and licence plate (MEDIUM) \textbf{10h}
+        \item Design registration window (HIGH) \textbf{6h}
+        \item Add a registration button in the login window (HIGH) \textbf{2h}
+        \item Add functionality to the registration button (HIGH) \textbf{4h}
+    \end{enumerate}
+  \end{enumerate}
+  
+  \item Matching
+  \begin{enumerate}
+      \item As a driver/rider, I select two cities and a time (HIGH)
+      \begin{enumerate}
+          \item Add a drop-down button of available cities (frontend) (HIGH) \textbf{6h}
+          \item Add functionality to the drop-down of available cities (backend) (HIGH) \textbf{8h}
+          \item Add a "Create Drive Instance"/"Create Ride Request" button for drivers/riders respectively (frontend) (HIGH) \textbf{10h}
+          \item Design how to store the drive instances and ride requests (HIGH) \textbf{10h}
+          \item If a request is created by a user it is added to the requests list (HIGH) \textbf{20h}
+      \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}

@@ -26,7 +26,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-\lhead{ Responsible: Alexander Ekman \& Linnea Johnsson \\ Date: \today}  \rhead{Document number: PRD \\ Version: 1.0}
+\lhead{ Responsible: Alexander Ekman \& Linnea Johnsson \\ Date: \today}  \rhead{Document number: PRD \\ Version: 1.18}
 \renewcommand{\headrulewidth}{0.5pt} 
 
 
@@ -87,9 +87,9 @@
     \item 20: \sout{section 7.2: Connect requirements to user stories}
     \item 21: \sout{section 7.2.1 Which non-functional requirement characteristic can requirements under 7.3 section be grouped under (performance, reliability, usability, portability...)? Can you add more non- functional requirements?}
     \item 22: \sout{Which technology will you be using (Base system server...) Development ID, any test suites (e.g. Junit), version control (Gitlab)... ?}
-    \item 24: Discuss the destinations given in BASE?
-    \item 25: SPF1: Prioritize issues
-    \item 26: SP1: Something was discussed
+    \item 24: \sout{Discuss the destinations given in BASE?}
+    \item 25: \sout{SPF1: Prioritize issues}
+    \item 26: \sout{SP1: Something was discussed}
     \item extra: \sout{Add jetty, and junit to technological requirements}
 \end{itemize}
 
@@ -99,7 +99,7 @@
 \begin{thebibliography}{widest entry}
     \bibitem{BNL} "Ride sharing Benefits, Brooklyn National Laboratory", 2012, url=\url{https://www.bnl.gov/rideshare/benefits.asp}, accessed 2021-09-14
     
-    \bibitem{PH} "Programvaruutveckling för Stora System Projekthandledning 2021", Institutionen för Datavetenskap Lunds Tekniska Högskola, Lunds Universitet, 26 August 2021
+    \bibitem{PH} "Programvaruutveckling för Stora System Projekthandledning 2021", Chapter 9, Institutionen för Datavetenskap Lunds Tekniska Högskola, Lunds Universitet, 26 August 2021
     
     \bibitem{SDP} "SDP - Software Development Plan, Team 1 - ETSN05", Alexander Ekman and Linnea Johnsson, url=\url{https://www.overleaf.com/read/bvbkjmdrkpdx}, accessed \today
     
@@ -137,7 +137,7 @@ Ride request = The objects created when a rider has declared that they would lik
 \section{System Use Case Diagram}
 \begin{figure}[!htpb]
     \centering
-    \includegraphics[scale=0.75]{system_case_diagram.pdf}
+    \includegraphics[scale=0.75]{prdFigures/system_case_diagram.pdf}
     \caption{The system use case diagram for \namep. Users register as either drivers, riders, or both and can after registration log in to access the service. A driver submits a an origin, destination, and time. If a rider has a similar request a match is made and the users are notified. The users can then accept or decline the match.}
     \label{fig:useCaseDiagram}
 \end{figure}
@@ -539,19 +539,19 @@ This section contains descriptions of requirements on the user interaction and s
     \centering
     \begin{minipage}{0.25\textwidth}
         \centering
-        \includegraphics[scale=1]{login.pdf}
+        \includegraphics[scale=1]{prdFigures/login.pdf}
         \caption{Log-in screen shown to unauthenticated user. The window also guides unregistered users to register}
         \label{fig:login}
     \end{minipage}\hfill
     \begin{minipage}{0.25\textwidth}
         \centering
-        \includegraphics[scale=1]{register.pdf}
+        \includegraphics[scale=1]{prdFigures/register.pdf}
         \caption{Screen shown to users registering for the first time. A distinction will be made if they register as drivers, as specified in paragraph \ref{req:driverRegistration}}
         \label{fig:register}
     \end{minipage}\hfill
     \begin{minipage}{0.25\textwidth}
         \centering
-        \includegraphics[scale=1]{submission2.pdf}
+        \includegraphics[scale=1]{prdFigures/submission2.pdf}
         \caption{Submission screen shown after successful log-in. Here riders can submit ride requests, and drivers submit drive instances}
         \label{fig:submission}
     \end{minipage}\hfill
@@ -561,19 +561,19 @@ This section contains descriptions of requirements on the user interaction and s
     \centering
     \begin{minipage}{0.25\textwidth}
         \centering
-        \includegraphics[scale=1]{profile.pdf}
+        \includegraphics[scale=1]{prdFigures/profile.pdf}
         \caption{Profile screen showing users their current details and which of these are editable. It also shows upcoming trips and the choice to accept/decline them}
         \label{fig:profile}
     \end{minipage}\hfill
     \begin{minipage}{0.25\textwidth}
         \centering
-        \includegraphics[scale=1]{profile2.pdf}
+        \includegraphics[scale=1]{prdFigures/profile2.pdf}
         \caption{Demonstration of how each upcoming trip can display more information}
         \label{fig:profile2}
     \end{minipage}\hfill
     \begin{minipage}{0.25\textwidth}
         \centering
-        \includegraphics[scale=1]{profile3.pdf}
+        \includegraphics[scale=1]{prdFigures/profile3.pdf}
         \caption{Demonstration of how users will be notified about new events}
         \label{fig:profile3}
     \end{minipage}\hfill

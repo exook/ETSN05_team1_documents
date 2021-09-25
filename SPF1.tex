@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+%{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+{0pt}{1.0ex plus 1ex minus .2ex}{0.1ex plus .2ex}
+
+\newcommand{\name}{ECW\ }
+\newcommand{\nameNospace}{ECW}
+\newcommand{\namep}{ECW.}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}}
+\renewcommand{\theenumiii}{\theenumii.\arabic{enumiii}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{ Responsible: Alexander Ekman \& Linnea Johnsson \\ Date: \today}  \rhead{Document number: SPF1 \\ Version: 1.1}
+\renewcommand{\headrulewidth}{0.5pt} 
+
+
+
+\title{SPF 1}
+%\title{Submodule test}
+%\title{Submodule test2}
+\author{Team 1}
+
+\begin{document}
+
+\date{}
+\maketitle
+\thispagestyle{fancy}
+
+\section*{Revision history}
+%\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Version & Date & Reason \\ \hline
+ 1.0 & 2021-09-08 & First draft \\ 
+ 1.1 & 2021-09-08 & Added priority to each user story and issue \\ 
+ \hline
+\end{tabular}
+%\end{center}
+
+\newpage
+\section{Product Backlog 1}
+The entries are labeled as X.Y.Z where this represents a unique identifier as Epic.Story.Issue.
+\begin{enumerate}
+  
+  \item User registration and authentication
+  \begin{enumerate}
+    \item As a user, I can register for the service as rider, drivers, or both (HIGH)
+    \begin{enumerate}
+        \item All users register full name, email, and phone number (HIGH)
+        \item If a user is a driver, they register car brand, model, color, and licence plate (MEDIUM)
+        \item Design registration window (HIGH)
+        \item Add a registration button in the login window (HIGH)
+        \item Add functionality to the registration button (HIGH)
+        \item As a registered user, I want to be able to log in and out (HIGH)
+        \item Users log in using email (HIGH)
+    \end{enumerate}
+  \end{enumerate}
+  
+  \item Matching
+  \begin{enumerate}
+      \item As a driver/rider, I select two cities and a time (HIGH)
+      \begin{enumerate}
+          \item If a user is registered as “both”, they have to specify if riding or driving (LOW)
+          \item Add a drop-down button of available cities (frontend) (HIGH)
+          \item Add functionality to the drop-down of available cities (backend) (HIGH)
+          \item Add a “Create Drive Instance”/“Create Ride Request” button for drivers/riders respectively (frontend) (HIGH)
+          \item Design how to store the drive instances and ride requests (HIGH)
+          \item If a request is created by a user it is added to the requests list (HIGH)
+      \end{enumerate}
+      \item As a driver I can also add cities on my route (LOW)
+  \end{enumerate}
+  
+  \item Matchmaking system
+  \begin{enumerate}
+      \item As a user, if two users have matching routes, we want to be paired up (HIGH)
+      \begin{enumerate}
+          \item Matches are made when there exists a driving instance, and there exists a rider request for a part of that route. (HIGH)
+      \end{enumerate}
+  \end{enumerate}
+  
+  \item After successful match
+  \begin{enumerate}
+      \item As a user, when a match is made, I want to be notified about the match and know how to recognize/contact each other (HIGH)
+      \begin{enumerate}
+          \item Implement notifications in BASE (HIGH)
+          \item Send notifications to specific user (HIGH)
+          \item Send notifications to users from match making system (HIGH)
+          \item Include useful information in notifications (car brand, model, color, driver/rider phone number) (HIGH)
+      \end{enumerate}
+      \item As a driver, I want to be able to decline a match (MEDIUM)
+      \item As a rider, I want to be able to decline a match (MEDIUM)
+  \end{enumerate}
+  
+  \item Administration
+  \begin{enumerate}
+      \item As administrator I can remove users (HIGH)
+      \begin{enumerate}
+          \item Allow administrator to remove users (HIGH)
+      \end{enumerate}
+  \end{enumerate}
+  
+\end{enumerate}
+
+\end{document}

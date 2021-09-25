@@ -59,6 +59,8 @@
  1.14 & 2021-09-21 & Linked requirements to user from pre-sprint 1\\
  1.15 & 2021-09-21 & Added more categories of non-functional requirements\\
  1.16 & 2021-09-21 & Added technological requirements\\
+ 1.17 & 2021-09-21 & Linked all requirements to user stories\\
+ 1.18 & 2021-09-21 & Completely revised route definitions and matching\\
  \hline
 \end{tabular}
 %\end{center}
@@ -84,17 +86,11 @@
     \end{itemize}
     \item 20: \sout{section 7.2: Connect requirements to user stories}
     \item 21: \sout{section 7.2.1 Which non-functional requirement characteristic can requirements under 7.3 section be grouped under (performance, reliability, usability, portability...)? Can you add more non- functional requirements?}
-    \item 22: Which technology will you be using (Base system server...) Development ID, any test suites (e.g. Junit), version control (Gitlab)... ?
+    \item 22: \sout{Which technology will you be using (Base system server...) Development ID, any test suites (e.g. Junit), version control (Gitlab)... ?}
     \item 24: Discuss the destinations given in BASE?
     \item 25: SPF1: Prioritize issues
     \item 26: SP1: Something was discussed
-    \item extra: Expand Product backlog to better fit the requirements
-\end{itemize}
-
-Questions
-\begin{itemize}
-    \item What are we supposed to reference from the SDP in the PRD?
-    \item Do I directly reference chapter 9?
+    \item extra: \sout{Add jetty, and junit to technological requirements}
 \end{itemize}
 
 \newpage
@@ -212,7 +208,7 @@ The entries are labeled as X.Y.Z where this represents a unique identifier as Ep
 
 \newpage
 \section{Project Requirements}
-This section contains all the functional and non-functional requirements of the system. Requirements associated to a user story ID marked with an asterisk (*) means that this requirement does not yet have a properly defined user story. This is because the requirements were defined after the first sprint started.
+This section contains all the functional and non-functional requirements of the system. Requirements associated to a user story ID marked with an asterisk (*) means that this requirement has been assigned the best matching Sprint 1 user story, but there will be a new user story created for this requirement in sprint 2.
 
 \subsection{Technological requirements}
 
@@ -220,7 +216,7 @@ This section contains all the functional and non-functional requirements of the 
 
 \paragraph{HTML, CSS}\label{req:hostingLogin}
 \textbf{ID}: T1\newline
-\textbf{User Story ID}:*\newline
+\textbf{User Story ID}: 1.1.0*\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server to host HTML and CSS code\newline
 \textbf{Rationale}: In order to display contents to the users of the web-app\newline
@@ -228,7 +224,7 @@ This section contains all the functional and non-functional requirements of the 
 
 \paragraph{JavaScript}\label{req:}
 \textbf{ID}: T2\newline
-\textbf{User Story ID}: \newline
+\textbf{User Story ID}: 1.1.0*\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server to host JavaScript code\newline
 \textbf{Rational}: JavaScript is necessary for the users interaction with the web-app and for web-app to dynamically change the contents shown to the user according to their actions\newline
@@ -236,7 +232,7 @@ This section contains all the functional and non-functional requirements of the 
 
 \paragraph{Bootstrap}\label{req:}
 \textbf{ID}: T3\newline
-\textbf{User Story ID}:* \newline
+\textbf{User Story ID}: 1.1.0* \newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server with support for bootstarp\newline
 \textbf{Rational}: This makes the CSS and JavaScript development simpler, and gives the web-app a more modern look\newline
@@ -246,7 +242,7 @@ This section contains all the functional and non-functional requirements of the 
 
 \paragraph{BASE server}\label{req:}
 \textbf{ID}: T4\newline
-\textbf{User Story ID}:* \newline
+\textbf{User Story ID}: 1.1.0* \newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: The core of the system requires a server running the BASE system, provided as a part of the ETSN05 course at Lund University, faculty of engineering\newline
 \textbf{Rational}: The BASE system provides the core front-end and back-end functionality for the web-app. This includes user registration, requests, admin user etc.\newline
@@ -271,10 +267,26 @@ This section contains all the functional and non-functional requirements of the 
 \subsubsection{Version control}
 \paragraph{Version control and issue tracking}\label{req:}
 \textbf{ID}: T7\newline
-\textbf{User Story ID}:* \newline
+\textbf{User Story ID}: NONE \newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: During development, the development team will use GitLab for both version control and issue tracking\newline
 \textbf{Rational}: Version control and issue tracking is essential to the development and Lund University has an educational licence\newline
+\textbf{Dependency}: \newline
+
+\paragraph{Backend}\label{req:}
+\textbf{ID} T8: \newline
+\textbf{User Story ID}: 1.1.0* \newline
+\textbf{Priority}:HIGH \newline
+\textbf{Description}: The system will utilize a Java backend with Jetty and Jersey. Jetty provides a small footprint HTTP server and servlet container, whilst Jersey is an abstraction layer on op of Jetty for implementing REST servers. \newline
+\textbf{Rational}: This combination is chosen because this is a common setup and is the most familiar to the developers in the team.\newline
+\textbf{Dependency}: \newline
+
+\paragraph{Unit testing}\label{req:}
+\textbf{ID}: T9\newline
+\textbf{User Story ID}: NONE\newline
+\textbf{Priority}: HIGH\newline
+\textbf{Description}: For Java and JavaScript unit testing the team will use JUnit and Jasmine respectively \newline
+\textbf{Rational}: These are common tools already familiar to the development team\newline
 \textbf{Dependency}: \newline
 
 %\paragraph{}\label{req:}
@@ -309,7 +321,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{User log-in}\label{req:log-in}
 \textbf{ID}: F3\newline
-\textbf{User Story ID}: 1.1.0*\newline
+\textbf{User Story ID}: 1.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A registered use should be able to log in using their email and password as shown in Figure \ref{fig:login}. \newline
 \textbf{Rationale}: In order to submit a drive instance or a ride request\newline
@@ -317,7 +329,7 @@ This section contains the requirements which specify the functions of the system
 
 \paragraph{User log-out}\label{req:log-out}
 \textbf{ID}: F4\newline
-\textbf{User Story ID}: 1.1.0*\newline
+\textbf{User Story ID}: 1.1.0\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A logged in user should be able to log out from the current session, as shown in Figure \ref{fig:submission}. \newline
 \textbf{Rationale}: In order to close a session\newline
@@ -419,7 +431,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Entering correct username and password}\label{req:}
 \textbf{ID}: Per1\newline
-\textbf{User Story ID}: *\newline
+\textbf{User Story ID}: 1.1.0*\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: A user who enters a correct username and password, once pressing the "log in" button, should not wait longer than 2 seconds to see the submission page shown in Figure \ref{fig:submission}\newline
 \textbf{Rationale}: Users should not wait to long to use the service\newline
@@ -427,7 +439,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Entering incorrect username and password}\label{req:}
 \textbf{ID}: Per2\newline
-\textbf{User Story ID}: *\newline
+\textbf{User Story ID}: 1.1.0*\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: A user who enters an incorrect username and password, once pressing the "log in" button, should not wait longer than 2 seconds to be prompted for another attempt \ref{fig:submission}\newline
 \textbf{Rationale}: Users should not wait to long to use the service\newline
@@ -435,7 +447,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Notification of new match}\label{req:}
 \textbf{ID}: Per3\newline
-\textbf{User Story ID}: *\newline
+\textbf{User Story ID}: 4.1.0*\newline
 \textbf{Priority}: LOW\newline
 \textbf{Description}: After a driver/rider is matched, their profile pages should update accordingly within 10 seconds\newline
 \textbf{Rationale}: Avoiding clashes in user actions\newline
@@ -445,7 +457,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{User input}\label{req:}
 \textbf{ID}: R1\newline
-\textbf{User Story ID}:* \newline
+\textbf{User Story ID}: NONE* \newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: The webb-app should not crash or freeze due to user input\newline
 \textbf{Rational}: So that users can reliably use the system\newline
@@ -455,7 +467,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Memory usage}\label{req:}
 \textbf{ID}: M1 \newline
-\textbf{User Story ID}: \newline
+\textbf{User Story ID}: NONE*\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: Running the web-app should never require more than 512 MB of memory from the users browser\newline
 \textbf{Rational}: We want users with low end devices to be able to use the service\newline
@@ -465,7 +477,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Browser Back and forward button}\label{req:}
 \textbf{ID}: U1\newline
-\textbf{User Story ID}:* \newline
+\textbf{User Story ID}: 4.1.0* \newline
 \textbf{Priority}: LOW\newline
 \textbf{Description}: A user using the back or forward button in their browser should be directed as expected. For example, a user on the submission screen pressing "Profile" as seen in Figure \ref{fig:submission} should be taken to the profile page seen in Figure \ref{fig:profile}. If the user presses "back" in their browser, they should be taken to the submission page. If the users presses forward after this, they are taken to their profile page.\newline
 \textbf{Rational}: Having dysfunctional and unsupported navigation gives web-applications a very bad reputation and makes users frustrated\newline
@@ -473,7 +485,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Multiple users}\label{req:}
 \textbf{ID}: U2\newline
-\textbf{User Story ID}:* \newline
+\textbf{User Story ID}: NONE* \newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: Multiple users should be able to be logged in and use the system features in parallel\newline
 \textbf{Rational}: This greatly increases the usability and efficiency of the system\newline
@@ -481,7 +493,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{User browser and operating system}\label{req:}
 \textbf{ID}: U3\newline
-\textbf{User Story ID}:* \newline
+\textbf{User Story ID}: NONE* \newline
 \textbf{Priority}: LOW\newline
 \textbf{Description}: The system should work the same for users using Microsoft Edge, Google Chrome, Mozilla Firefox, or Safari web browsers. It should also be independent from their operating system\newline
 \textbf{Rational}: If we discriminate one browser or operating system we risk missing out of ~20\% of the user base\newline
@@ -489,7 +501,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Mobile support}\label{req:}
 \textbf{ID}: U4\newline
-\textbf{User Story ID}: \newline
+\textbf{User Story ID}: NONE*\newline
 \textbf{Priority}: LOW\newline
 \textbf{Description}: Users should be able to use the web-app from their mobile devices without suffereing from decreased usability compared to using a PC\newline
 \textbf{Rational}: Most users will be on the go and require a good mobile user support\newline
@@ -499,7 +511,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Remote/local host}\label{req:}
 \textbf{ID}: Por1\newline
-\textbf{User Story ID}: \newline
+\textbf{User Story ID}: NONE\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: The system should be able to run in full on a local or remote host\newline
 \textbf{Rational}: Enabling the system to run on a local host will make the distributed development simpler\newline
@@ -507,7 +519,7 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{Host operating system}\label{req:}
 \textbf{ID}: Por2\newline
-\textbf{User Story ID}: \newline
+\textbf{User Story ID}: NONE*\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: The system should support a host server of either Windows, Mac, or Linux\newline
 \textbf{Rational}: Enabling the system server to be hosted on multiple OS makes it easier for development and distribution to client\newline
@@ -568,9 +580,15 @@ This section contains descriptions of requirements on the user interaction and s
 \end{figure}
 
 \newpage
-\section{Appendix B: Route functionality}
-The core functionality of this web-app is to allow drivers and riders to carpool on a common route. In order to increase the value stream to our client, we choose to prioritize this core functionality over any "smart" features such as route optimization.
+\section{Appendix B: Available routes, and route matching}
+The available origins and destinations that users can chose will be based on the lists found in "areas.csv" and "districts.csv". These files exist in the documents folder of the repository. "areas.csv" contain the major cities/counties in Skåne and their coordinates. "district.csv" contain the smaller city/county districts and their coordinates.
 
-As a balance between core functionality and the development teams available resources, we envision three phases of the route implementation. The first phase involves the driver specifying two cities, one origin and one destination. If these match those of a rider then there is a match. In phase two we plan to allow drivers to enter an origin, a destination, as well as stops in between which they personally consider as reasonable stops along the way. This is because adding destinations to a route seems like a solvable programming problem, but to know weather it makes sense to pick someone up in Lund on a trip from Malmö to Helsingborg (a 17 minute detour, 34\% longer) is a completely different issue than route optimization. Therefore we will leave it up to the driver to determine what cities, towns, or villages they deem appropriate as stops on their route. After phase 3 of the route implementation, we may consider implementing a more algorithm based solution.
+A driver will pick an origin and destination available in these files, and submit a drive instance together with a percentage of how much longer the trip is allowed to be with an added carpool rider (tolerance). A rider will pick an origin and destination available in these files and submit a ride request. For the drive instances and ride requests that have matching origins, they are tested for a match. A match is made if the riders destination doesn't deviate more than the tolerance from the drivers original route.
+
+In order to deliver a working prototype early, and to deliver value to our client often, the initial implementation of the route matching will be simplified. In the initial implementation the original route will be estimated as a straight line between origin and destination on a flat plane. The deviation will be estimated as a perpendicular line to the rider destination from the route line. This should be done in spherical coordinates, but since an actual driving route is far from a straight line (or arc), spherical coordinates is not our main concern.
+
+There is a major flaw with this straight line approach. For example, a straight line between Malmö and Kristianstad would put the small town of Önneköp right on that line with little to no deviation. But in reality, Önneköp is a 20 minute detour on this route. On the other side of the spectrum, if you draw a straight line between Malmö and Helsingborg, most of that line is across water, and the small town of Fjelie is a 10 km deviation from that line. But in reality, Fjelie is only a 4 min detour on this route, which is a very reasonable detour for a carpool.
+
+A future version of the system should employ more sophisticated methods. For example, an external API such as MapQuest could determine the actual driving routes and how many minutes an extra carpool destination will add. The driver would then instead of a distance tolerance be able to add a time tolerance.
 
 \end{document}

@@ -26,7 +26,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-\lhead{ Responsible: Alexander Ekman \& Linnea Johnsson \\ Date: \today}  \rhead{Document number: PUSS21412 \\ Version: 1.20}
+\lhead{ Responsible: Alexander Ekman \& Linnea Johnsson \\ Date: \today}  \rhead{Document number: PUSS21412 \\ Version: 1.21}
 \renewcommand{\headrulewidth}{0.5pt} 
 
 
@@ -63,6 +63,7 @@
  1.18 & 2021-09-21 & Completely revised route definitions and matching\\\hline
  1.19 & 2021-09-21 & Added new UML use case diagram and new figure caption\\\hline
  1.20 & 2021-09-21 & Fixed requirement dependencies\\\hline
+ 1.21 & 2021-09-21 & Updated Appendix B based on discussion with team\\\hline
  
 \end{tabular}
 %\end{center}
@@ -556,12 +557,14 @@ This section contains descriptions of requirements on the user interaction and s
 \section{Appendix B: Available routes, and route matching}
 The available origins and destinations that users can chose will be based on the lists found in "areas.csv" and "districts.csv". These files exist in the same respository as this PRD. "areas.csv" contain the major cities/counties in Skåne and their coordinates. "district.csv" contain the smaller city/county districts and their coordinates.
 
-A driver will pick an origin and destination available in these files, and submit a drive instance together with a percentage of how much longer the trip is allowed to be with an added carpool rider (tolerance). A rider will pick an origin and destination available in these files and submit a ride request. For the drive instances and ride requests that have matching origins, they are tested for a match. A match is made if the riders destination doesn't deviate more than the tolerance from the drivers original route.
+A driver will pick an origin and destination available in these files, and submit a drive instance together with a value for how much longer the trip is allowed to be with an added carpool rider (tolerance). A rider will pick an origin and destination available in these files and submit a ride request. For the drive instances and ride requests that have matching origins, they are tested for a match. A match is made if the riders destination doesn't deviate more than the tolerance from the drivers original route.
 
-In order to deliver a working prototype early, and to deliver value to our client often, the initial implementation of the route matching will be simplified. In the initial implementation the original route will be estimated as a straight line between origin and destination on a flat plane. The deviation will be estimated as a perpendicular line from the original route to the rider destination. This should be done in spherical coordinates, but since an actual driving route is far from a straight line (or arc), spherical coordinates is not our main concern.
+In order to deliver a working prototype early, and to deliver value to our client often, the initial implementation of the route matching will be simplified. In the initial implementation the original driver route will be estimated as a straight line between origin and destination on a flat plane. The deviation induced by a rider will be estimated as a perpendicular line from the original route to the rider destination. This could be done in spherical coordinates, but since an actual driving route is far from a straight line (or arc), spherical coordinates is not our main concern.
 
 There is a major flaw with this straight line approach. For example, a straight line between Malmö and Kristianstad would put the small town of Önneköp right on that line with little to no deviation. But in reality, Önneköp is a 20 minute detour on this route. On the other side of the spectrum, if you draw a straight line between Malmö and Helsingborg, most of that line is across water, and the small town of Fjelie is a 10 km deviation from that line. But in reality, Fjelie is only a 4 min detour on this route, which is a very reasonable detour for a carpool.
 
-A future version of the system should employ more sophisticated methods. For example, an external API such as MapQuest could determine the actual driving routes and how many minutes an extra carpool destination will add. The driver would then instead of a distance tolerance be able to add a time tolerance.
+We envision the matching to be delivered in three phases. In the first phase we will only support routes between town centers. Drivers and users will match if they have submitted the same origin and destination town centers. In the second phase, we will support routes between town centers and different city districts. In the third phase, we will also match drivers and riders where the rider only joins a part of the original rout, i.e the rider does not share the exact same origin and destination as the driver.
+
+%A future version of the system should employ more sophisticated methods. For example, an external API such as MapQuest could determine the actual driving routes and how many minutes an extra carpool destination will add. The driver would then instead of a distance tolerance be able to add a time tolerance.
 
 \end{document}

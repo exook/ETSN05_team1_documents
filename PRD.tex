@@ -26,7 +26,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-\lhead{ Responsible: Alexander Ekman \& Linnea Johnsson \\ Date: \today}  \rhead{Document number: PRD \\ Version: 1.18}
+\lhead{ Responsible: Alexander Ekman \& Linnea Johnsson \\ Date: \today}  \rhead{Document number: PUSS21412 \\ Version: 1.20}
 \renewcommand{\headrulewidth}{0.5pt} 
 
 
@@ -50,69 +50,42 @@
 %\begin{center}
 \begin{tabular}{ |c|c|l| } 
  \hline
- Version & Date & Reason \\ \hline
- 1.0 & 2021-09-15 & First draft \\ 
- 1.1 & 2021-09-15 & Fixed typos from team feedback \\ 
- 1.11 & 2021-09-20 & Added references to SDP and PH book\\
- 1.12 & 2021-09-20 & Added clients product description to introduction and system user section \\
- 1.13 & 2021-09-20 & Added description of admin under Terminology Section\\
- 1.14 & 2021-09-21 & Linked requirements to user from pre-sprint 1\\
- 1.15 & 2021-09-21 & Added more categories of non-functional requirements\\
- 1.16 & 2021-09-21 & Added technological requirements\\
- 1.17 & 2021-09-21 & Linked all requirements to user stories\\
- 1.18 & 2021-09-21 & Completely revised route definitions and matching\\
- \hline
+ Version & Date & Reason \\ \hline \hline
+ 1.0 & 2021-09-15 & First draft \\ \hline
+ 1.1 & 2021-09-15 & Fixed typos from team feedback \\ \hline
+ 1.11 & 2021-09-20 & Added references to SDP and PH book\\\hline
+ 1.12 & 2021-09-20 & Added clients product description to introduction and system user section \\\hline
+ 1.13 & 2021-09-20 & Added description of admin under Terminology Section\\\hline
+ 1.14 & 2021-09-21 & Linked requirements to user from pre-sprint 1\\\hline
+ 1.15 & 2021-09-21 & Added more categories of non-functional requirements\\\hline
+ 1.16 & 2021-09-21 & Added technological requirements\\\hline
+ 1.17 & 2021-09-21 & Linked all requirements to user stories\\\hline
+ 1.18 & 2021-09-21 & Completely revised route definitions and matching\\\hline
+ 1.19 & 2021-09-21 & Added new UML use case diagram and new figure caption\\\hline
+ 1.20 & 2021-09-21 & Fixed requirement dependencies\\\hline
+ 
 \end{tabular}
 %\end{center}
-
-\newpage
-\section*{Feedback}
-\begin{itemize}
-    \item 11: \sout{In section "revision history": Were there earlier versions of the document, that were revised per the team members' feedback?}
-    \item 14: \sout{In section 2:}
-    \begin{itemize}
-        \item \sout{Move referenced documents section before Introduction section.}
-        \item \sout{Reference PH Book (Uppdragbeskrivning)}
-        \item \sout{Reference SDP}
-    \end{itemize}
-    \item 15: \sout{section 1: Reference PH Book Chapter 9}
-    \item 16: \sout{section 3.2: Admin user not discussed}
-    \item 17: \sout{section 4: Admin user not discussed}
-    \item 18: Section 5:
-    \begin{itemize}
-        \item -Please do not deviate from UML standard when creating system use case diagram. You can draw by hand, use limited free version of Omni Graffle, StarUML... Please see example in exercise 1.2. Take advantage of <<uses>> tag.
-        \item Can Driver and Rider edit registered ride request or trip?
-        \item Can Driver edit vehicle information?
-    \end{itemize}
-    \item 20: \sout{section 7.2: Connect requirements to user stories}
-    \item 21: \sout{section 7.2.1 Which non-functional requirement characteristic can requirements under 7.3 section be grouped under (performance, reliability, usability, portability...)? Can you add more non- functional requirements?}
-    \item 22: \sout{Which technology will you be using (Base system server...) Development ID, any test suites (e.g. Junit), version control (Gitlab)... ?}
-    \item 24: \sout{Discuss the destinations given in BASE?}
-    \item 25: \sout{SPF1: Prioritize issues}
-    \item 26: \sout{SP1: Something was discussed}
-    \item extra: \sout{Add jetty, and junit to technological requirements}
-\end{itemize}
 
 \newpage
 
 \section{Referenced documents}
 \begin{thebibliography}{widest entry}
-    \bibitem{BNL} "Ride sharing Benefits, Brooklyn National Laboratory", 2012, url=\url{https://www.bnl.gov/rideshare/benefits.asp}, accessed 2021-09-14
-    
+
     \bibitem{PH} "Programvaruutveckling för Stora System Projekthandledning 2021", Chapter 9, Institutionen för Datavetenskap Lunds Tekniska Högskola, Lunds Universitet, 26 August 2021
     
     \bibitem{SDP} "SDP - Software Development Plan, Team 1 - ETSN05", Alexander Ekman and Linnea Johnsson, url=\url{https://www.overleaf.com/read/bvbkjmdrkpdx}, accessed \today
     
+    \bibitem{BNL} "Ride sharing Benefits, Brooklyn National Laboratory", 2012, url=\url{https://www.bnl.gov/rideshare/benefits.asp}, accessed 2021-09-14
+    
 \end{thebibliography}
 
 \section{Introduction}\label{sec:intro}
-This Product Requirements Document (PRD) details the requirements to develop a web-app based carpool service called ETSN05\_PG1 Carpool Webb-app (\nameNospace).
+This Product Requirements Document (PRD) details the requirements to develop a web-app based carpool service called ETSN05\_PG1 Carpool Webb-app (\nameNospace). The purpose of this PRD is to provide the system characteristics, the epics and user stories, as well as the requirements of the system. This document is intended as a basis for the contract between the development team and the client, it will also serve as a reference for the development team during the development process.
 
-The purpose of this PRD is to provide the system characteristics, the epics and user stories, as well as the requirements of the system. This document is intended as a basis for the contract between the development team and the client, it will also serve as a reference for the development team during the development process.
+As stated in the clients product description\cite{PH}, \name will be a web-application for a carpool service. Users will set an origin, destination, time and date, for a car trip and be notified which car to go with. If the user is a driver, they should be able to go into the system, declare origin, destination, data and time, and be notified of any passengers joining the carpool. The system should find a reasonable distribution of passengers into the avaliable rides. In the simplest scenario, the system finds riders and drivers with the same origin, destination and time. In a more advanced scenario, the system can create rides where riders have different destinations along the same route. For example, one driver can drive between Malmö and Helsingborg with two passengers, where one rides along the whole route, and the other only rides along between Malmö and Landskrona. The system doesn't necessarily feature a map, but can utilize a list of addresses or cities from which users choose origin and destination. Users of the system need to register before using it. They will also declare if they are riders, drivers, or both. There should also be functionality for an administrative user, which can for example remove registered users. The system should also be able to handle abnormal behaviour from users without crashing or freezing. Multiple users should be able to use the system in paralell. There ares some topics left for the development team to work out, for example what cities are available, how a destination is defined to be "en rute", how riders and drivers are matched, and how they are notified.
 
-As stated in the clients product description\cite{PH}, \name will be a web-application for a carpool service. Users will set an origin, destination, time and date, for a car trip and be notified which car to go with. If the user is a driver, they should be able to go into the system, declare origin, destination, data and time, and be notified of any passengers joining the carpool. The system should find a reasonable distribution of passengers into the avaliable rides. In the simplest scenario, the system finds riders and drivers with the same origin, destination and time. In a more advanced scenario, the system can create rides where riders have different destinations along the same route. For example, one driver can drive between Malmö and Helsingborg with two passengers, where one rides along the whole route, and the other only rides along between Malmö and Landskrona. The system doesn't necessarily feature a map, but can utilize a list of addresses or cities from which users choose origin and destination. Users of the system need to register before using it. They will also declare if they are riders, drivers, or both. There should also be functionality for an administrative user, which can for example remove registered users. The system should also be able to handle abnormal behaviour from users without crashing or freezing. Multiple users should be able to use the system in paralell.
-
-There ares some topics left for the development team to work out, for example what cities are available, how a destination is defined to be "en rute", how riders and drivers are matched, and how they are notified.
+The detailed plan of the developemnt can be found in the Software Development Plan (SDP) produced for the development of \nameNospace. The document includes the process model, the project's phases and their corresponding time-estimates. The SDP also includes a description of the project's organisation, time plan, configuration handling, and quality review, as well as a a risk analysis of the project\cite{SDP}.
 
 \section{Background and product goals}
 \subsection{Purpose}
@@ -129,16 +102,16 @@ As specified in Section \ref{sec:intro} and the clients product description\cite
 \name = The name of the system\newline
 Driver = A car owner who is willing to bring someone along a planned route\newline
 Rider = A non-car-owner who would like to carpool somewhere\newline
-Admin/Administrator = A user of the system with special privileges such as adding/removing users and editing their user details
-Drive instance = The objects created when a driver has declared that they will be driving a certain route a certain date and time
-Ride request = The objects created when a rider has declared that they would like to ride along a certain route a certain date and time
+Admin/Administrator = A user of the system with special privileges sremoving users.\newline
+Drive instance = The objects created when a driver has declared that they will be driving a certain route a certain date and time\newline
+Ride request = The objects created when a rider has declared that they would like to ride along a certain route a certain date and time\newline
 
 \newpage
 \section{System Use Case Diagram}
 \begin{figure}[!htpb]
     \centering
-    \includegraphics[scale=0.75]{prdFigures/system_case_diagram.pdf}
-    \caption{The system use case diagram for \namep. Users register as either drivers, riders, or both and can after registration log in to access the service. A driver submits a an origin, destination, and time. If a rider has a similar request a match is made and the users are notified. The users can then accept or decline the match.}
+    \includegraphics[scale=0.8]{prdFigures/system_case_diagram.pdf}
+    \caption{The system use case diagram for \namep \  New users register as either riders, drivers, or both and can after registration log in to access the service. When logged in, the user is shown a submission form as a main page, shown in Figure \ref{fig:submission}. The user submits a an origin, destination, and time. If another rider/driver has a similar request a match is made and the users are notified. From the submission page, users can access their profile page, which is visualized in Figure \ref{fig:profile}. Here they can edit profile details, read notifications, and edit/accept/decline trips and matches.}
     \label{fig:useCaseDiagram}
 \end{figure}
 
@@ -208,45 +181,27 @@ The entries are labeled as X.Y.Z where this represents a unique identifier as Ep
 
 \newpage
 \section{Project Requirements}
-This section contains all the functional and non-functional requirements of the system. Requirements associated to a user story ID marked with an asterisk (*) means that this requirement has been assigned the best matching Sprint 1 user story, but there will be a new user story created for this requirement in sprint 2.
+This section contains all the technological,  functional and non-functional requirements of the system. Requirements associated to a user story ID marked with an asterisk (*) means that this requirement has been assigned the best matching Sprint 1 user story, but there will be a new and more relevant user story created for this requirement in sprint 2.
 
 \subsection{Technological requirements}
 
-\subsubsection{Front-end}
-
-\paragraph{HTML, CSS}\label{req:hostingLogin}
-\textbf{ID}: T1\newline
-\textbf{User Story ID}: 1.1.0*\newline
-\textbf{Priority}: HIGH\newline
-\textbf{Description}: This project requires a server to host HTML and CSS code\newline
-\textbf{Rationale}: In order to display contents to the users of the web-app\newline
-\textbf{Dependency}:
-
-\paragraph{JavaScript}\label{req:}
-\textbf{ID}: T2\newline
-\textbf{User Story ID}: 1.1.0*\newline
-\textbf{Priority}: HIGH\newline
-\textbf{Description}: This project requires a server to host JavaScript code\newline
-\textbf{Rational}: JavaScript is necessary for the users interaction with the web-app and for web-app to dynamically change the contents shown to the user according to their actions\newline
-\textbf{Dependency}: \newline
-
-\paragraph{Bootstrap}\label{req:}
-\textbf{ID}: T3\newline
-\textbf{User Story ID}: 1.1.0* \newline
-\textbf{Priority}: HIGH\newline
-\textbf{Description}: This project requires a server with support for bootstarp\newline
-\textbf{Rational}: This makes the CSS and JavaScript development simpler, and gives the web-app a more modern look\newline
-\textbf{Dependency}: \newline
-
 \subsubsection{Back-end}
 
-\paragraph{BASE server}\label{req:}
+\paragraph{Java and Jetty}\label{req:javaandjetty}
+\textbf{ID} T8: \newline
+\textbf{User Story ID}: 1.1.0* \newline
+\textbf{Priority}:HIGH \newline
+\textbf{Description}: The system will utilize a Java backend with Jetty and Jersey. Jetty provides a small footprint HTTP server and servlet container, whilst Jersey is an abstraction layer on op of Jetty for implementing REST servers. \newline
+\textbf{Rational}: This combination is chosen because this is a common setup and is the most familiar to the developers in the team.\newline
+\textbf{Dependency}: none\newline
+
+\paragraph{BASE server}\label{req:base}
 \textbf{ID}: T4\newline
 \textbf{User Story ID}: 1.1.0* \newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: The core of the system requires a server running the BASE system, provided as a part of the ETSN05 course at Lund University, faculty of engineering\newline
 \textbf{Rational}: The BASE system provides the core front-end and back-end functionality for the web-app. This includes user registration, requests, admin user etc.\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: \ref{req:javaandjetty}\newline
 
 \paragraph{SQL Trip database}\label{req:tripDatabase}
 \textbf{ID}: T5\newline
@@ -254,7 +209,7 @@ This section contains all the functional and non-functional requirements of the 
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: This project requires a server to host the submitted ride requests and drive instances in an SQL database so that these can be matched.\newline
 \textbf{Rationale}: In order to run a matching algorithm\newline
-\textbf{Dependency}: \ref{req:server}
+\textbf{Dependency}: \ref{req:base}
 
 \paragraph{Trip matching algorithm}\label{req:matchAlgorithm}
 \textbf{ID}: T6\newline
@@ -264,30 +219,48 @@ This section contains all the functional and non-functional requirements of the 
 \textbf{Rationale}: In order to match riders and drivers\newline
 \textbf{Dependency}: \ref{req:tripDatabase}
 
-\subsubsection{Version control}
-\paragraph{Version control and issue tracking}\label{req:}
+\subsubsection{Version control and unit testing}
+\paragraph{Version control and issue tracking}\label{req:git}
 \textbf{ID}: T7\newline
-\textbf{User Story ID}: NONE \newline
+\textbf{User Story ID}: none \newline
 \textbf{Priority}: HIGH\newline
-\textbf{Description}: During development, the development team will use GitLab for both version control and issue tracking\newline
+\textbf{Description}: During development, the development team requires the use of GitLab for both version control and issue tracking\newline
 \textbf{Rational}: Version control and issue tracking is essential to the development and Lund University has an educational licence\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: none\newline
 
-\paragraph{Backend}\label{req:}
-\textbf{ID} T8: \newline
-\textbf{User Story ID}: 1.1.0* \newline
-\textbf{Priority}:HIGH \newline
-\textbf{Description}: The system will utilize a Java backend with Jetty and Jersey. Jetty provides a small footprint HTTP server and servlet container, whilst Jersey is an abstraction layer on op of Jetty for implementing REST servers. \newline
-\textbf{Rational}: This combination is chosen because this is a common setup and is the most familiar to the developers in the team.\newline
-\textbf{Dependency}: \newline
-
-\paragraph{Unit testing}\label{req:}
+\paragraph{Unit testing}\label{req:unittesting}
 \textbf{ID}: T9\newline
-\textbf{User Story ID}: NONE\newline
+\textbf{User Story ID}: none\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: For Java and JavaScript unit testing the team will use JUnit and Jasmine respectively \newline
 \textbf{Rational}: These are common tools already familiar to the development team\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: none\newline
+
+\subsubsection{Front-end}
+
+\paragraph{HTML, CSS}\label{req:}
+\textbf{ID}: T1\newline
+\textbf{User Story ID}: 1.1.0*\newline
+\textbf{Priority}: HIGH\newline
+\textbf{Description}: This project requires a server to host HTML and CSS code\newline
+\textbf{Rationale}: In order to display contents to the users of the web-app\newline
+\textbf{Dependency} \ref{req:base}:
+
+\paragraph{JavaScript}\label{req:}
+\textbf{ID}: T2\newline
+\textbf{User Story ID}: 1.1.0*\newline
+\textbf{Priority}: HIGH\newline
+\textbf{Description}: This project requires a server to host JavaScript code\newline
+\textbf{Rational}: JavaScript is necessary for the users interaction with the web-app and for web-app to dynamically change the contents shown to the user according to their actions\newline
+\textbf{Dependency}: \ref{req:base}\newline
+
+\paragraph{Bootstrap}\label{req:}
+\textbf{ID}: T3\newline
+\textbf{User Story ID}: 1.1.0* \newline
+\textbf{Priority}: HIGH\newline
+\textbf{Description}: This project requires a server with support for bootstarp\newline
+\textbf{Rational}: This makes the CSS and JavaScript development simpler, and gives the web-app a more modern look\newline
+\textbf{Dependency}: \ref{req:base}\newline
 
 %\paragraph{}\label{req:}
 %\textbf{ID}: \newline
@@ -309,7 +282,7 @@ This section contains the requirements which specify the functions of the system
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: A prospective user should be able to access the website and be guided to registering a new account, as shown in Figure \ref{fig:login}. To register for the service, all users must provide full name, email, password, and phone number as shown in Figure \ref{fig:register}.\newline
 \textbf{Rationale}: In order for new members to register for the service\newline
-\textbf{Dependency}: NA
+\textbf{Dependency}: \ref{req:base}
 
 \paragraph{Driver registration}\label{req:driverRegistration}
 \textbf{ID}: F2\newline
@@ -457,21 +430,21 @@ This section contains descriptions of requirements on the user interaction and s
 
 \paragraph{User input}\label{req:}
 \textbf{ID}: R1\newline
-\textbf{User Story ID}: NONE* \newline
+\textbf{User Story ID}: none* \newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: The webb-app should not crash or freeze due to user input\newline
 \textbf{Rational}: So that users can reliably use the system\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: none\newline
 
 \subsubsection{Memory requirements}
 
 \paragraph{Memory usage}\label{req:}
 \textbf{ID}: M1 \newline
-\textbf{User Story ID}: NONE*\newline
+\textbf{User Story ID}: none*\newline
 \textbf{Priority}: MEDIUM\newline
 \textbf{Description}: Running the web-app should never require more than 512 MB of memory from the users browser\newline
 \textbf{Rational}: We want users with low end devices to be able to use the service\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: none\newline
 
 \subsubsection{Usability requirements}
 
@@ -481,49 +454,49 @@ This section contains descriptions of requirements on the user interaction and s
 \textbf{Priority}: LOW\newline
 \textbf{Description}: A user using the back or forward button in their browser should be directed as expected. For example, a user on the submission screen pressing "Profile" as seen in Figure \ref{fig:submission} should be taken to the profile page seen in Figure \ref{fig:profile}. If the user presses "back" in their browser, they should be taken to the submission page. If the users presses forward after this, they are taken to their profile page.\newline
 \textbf{Rational}: Having dysfunctional and unsupported navigation gives web-applications a very bad reputation and makes users frustrated\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: \label{req:profileDetails}\newline
 
 \paragraph{Multiple users}\label{req:}
 \textbf{ID}: U2\newline
-\textbf{User Story ID}: NONE* \newline
+\textbf{User Story ID}: none* \newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: Multiple users should be able to be logged in and use the system features in parallel\newline
 \textbf{Rational}: This greatly increases the usability and efficiency of the system\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: none\newline
 
 \paragraph{User browser and operating system}\label{req:}
 \textbf{ID}: U3\newline
-\textbf{User Story ID}: NONE* \newline
+\textbf{User Story ID}: none* \newline
 \textbf{Priority}: LOW\newline
 \textbf{Description}: The system should work the same for users using Microsoft Edge, Google Chrome, Mozilla Firefox, or Safari web browsers. It should also be independent from their operating system\newline
 \textbf{Rational}: If we discriminate one browser or operating system we risk missing out of ~20\% of the user base\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: none\newline
 
 \paragraph{Mobile support}\label{req:}
 \textbf{ID}: U4\newline
-\textbf{User Story ID}: NONE*\newline
+\textbf{User Story ID}: none*\newline
 \textbf{Priority}: LOW\newline
 \textbf{Description}: Users should be able to use the web-app from their mobile devices without suffereing from decreased usability compared to using a PC\newline
 \textbf{Rational}: Most users will be on the go and require a good mobile user support\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: none\newline
 
 \subsubsection{Portability requirements}
 
 \paragraph{Remote/local host}\label{req:}
 \textbf{ID}: Por1\newline
-\textbf{User Story ID}: NONE\newline
+\textbf{User Story ID}: none\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: The system should be able to run in full on a local or remote host\newline
 \textbf{Rational}: Enabling the system to run on a local host will make the distributed development simpler\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: none\newline
 
 \paragraph{Host operating system}\label{req:}
 \textbf{ID}: Por2\newline
-\textbf{User Story ID}: NONE*\newline
+\textbf{User Story ID}: none*\newline
 \textbf{Priority}: HIGH\newline
 \textbf{Description}: The system should support a host server of either Windows, Mac, or Linux\newline
 \textbf{Rational}: Enabling the system server to be hosted on multiple OS makes it easier for development and distribution to client\newline
-\textbf{Dependency}: \newline
+\textbf{Dependency}: none\newline
 
 %\paragraph{}\label{req:}
 %\textbf{ID}: \newline
@@ -581,11 +554,11 @@ This section contains descriptions of requirements on the user interaction and s
 
 \newpage
 \section{Appendix B: Available routes, and route matching}
-The available origins and destinations that users can chose will be based on the lists found in "areas.csv" and "districts.csv". These files exist in the documents folder of the repository. "areas.csv" contain the major cities/counties in Skåne and their coordinates. "district.csv" contain the smaller city/county districts and their coordinates.
+The available origins and destinations that users can chose will be based on the lists found in "areas.csv" and "districts.csv". These files exist in the same respository as this PRD. "areas.csv" contain the major cities/counties in Skåne and their coordinates. "district.csv" contain the smaller city/county districts and their coordinates.
 
 A driver will pick an origin and destination available in these files, and submit a drive instance together with a percentage of how much longer the trip is allowed to be with an added carpool rider (tolerance). A rider will pick an origin and destination available in these files and submit a ride request. For the drive instances and ride requests that have matching origins, they are tested for a match. A match is made if the riders destination doesn't deviate more than the tolerance from the drivers original route.
 
-In order to deliver a working prototype early, and to deliver value to our client often, the initial implementation of the route matching will be simplified. In the initial implementation the original route will be estimated as a straight line between origin and destination on a flat plane. The deviation will be estimated as a perpendicular line to the rider destination from the route line. This should be done in spherical coordinates, but since an actual driving route is far from a straight line (or arc), spherical coordinates is not our main concern.
+In order to deliver a working prototype early, and to deliver value to our client often, the initial implementation of the route matching will be simplified. In the initial implementation the original route will be estimated as a straight line between origin and destination on a flat plane. The deviation will be estimated as a perpendicular line from the original route to the rider destination. This should be done in spherical coordinates, but since an actual driving route is far from a straight line (or arc), spherical coordinates is not our main concern.
 
 There is a major flaw with this straight line approach. For example, a straight line between Malmö and Kristianstad would put the small town of Önneköp right on that line with little to no deviation. But in reality, Önneköp is a 20 minute detour on this route. On the other side of the spectrum, if you draw a straight line between Malmö and Helsingborg, most of that line is across water, and the small town of Fjelie is a 10 km deviation from that line. But in reality, Fjelie is only a 4 min detour on this route, which is a very reasonable detour for a carpool.
 

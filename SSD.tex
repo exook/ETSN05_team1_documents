@@ -1,0 +1,220 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ulem}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+%{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+{0pt}{1.0ex plus 1ex minus .2ex}{0.1ex plus .2ex}
+
+\newcommand{\name}{ECW\ }
+\newcommand{\nameNospace}{ECW}
+\newcommand{\namep}{ECW.}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}}
+\renewcommand{\theenumiii}{\theenumii.\arabic{enumiii}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{ Responsible: Alexander Ekman, Linnea Johnsson, and David Ravanelli \\ Date: \today}  \rhead{Document number: PUSS21418 \\ Version: 1.1}
+\renewcommand{\headrulewidth}{0.5pt} 
+
+\title{SSD - System Specification Document}
+\author{Team 1}
+
+\begin{document}
+
+\date{}
+\maketitle
+\thispagestyle{fancy}
+\newpage
+
+\section*{Revision History}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|p{55mm}|p{35mm}|}
+    \hline
+    Date & Version & Description & Author \\ 
+    \hline\hline 
+    2021-10-13 & 1.0 & Outlines of all sections & Linnea Johnsson \\
+    \hline
+    2021-10-15 & 1.1 & Added system setup instructions & Alexander Ekman \& Max Fogwall  \\
+    \hline
+    2021-10-18 & 1.11 & Added all unfulfilled requirements & Alexander Ekman \\
+    \hline
+    \end{tabular}
+    \label{tab:history}
+\end{table}
+\newpage
+
+\begin{thebibliography}{widest entry}
+
+    \bibitem{PH} "Programvaruutveckling för Stora System Projekthandledning 2021", Chapter 9, Institutionen för Datavetenskap Lunds Tekniska Högskola, Lunds Universitet, 26 August 2021
+    
+    \bibitem{SDP} "SDP - Software Development Plan, Team 1 - ETSN05", Alexander Ekman and Linnea Johnsson, url=\url{https://www.overleaf.com/read/bvbkjmdrkpdx}, accessed \today
+    
+    \bibitem{PRD} "PRD - Product Requirements Document, Team 1", Alexander Ekman and Linnea Johnsson, url=\url{}, accessed \today
+    
+\end{thebibliography}
+\newpage
+
+\tableofcontents
+\newpage
+
+%Från projekthandledningen:
+%I SSD ska systemets olika dokument “knytas samman” till ett system. SSD ska innehålla en beskrivning av det levererade systemets olika delar, versioner etc. 
+%SSD ska även innehålla en beskrivning av eventuella skillnader gentemot PDR. Alla större förändringar av PDR eller förändringar av PDR som har betydelse för kunden skall beskrivas. 
+%Om några krav inte kunnat uppfyllas skall detta tydligt anges med hänvisning till relevanta testfall och testprotokoll. 
+%Det är mycket viktigt att det i SSD står var man kan hitta alla dokument och filer, samt hur man startar systemet.
+
+\section{Introduction}\label{sec:intro} %Linnea
+%This document presents describes the delivered system, and details which version each document is in.  It also specifies limitations of the delivered system, and possible differences between the requirements specification and the delivered system.
+This document aims to present and describe the system created in the course ETSN05. The documents, and which versions of them, that are related to the system are listed. Furthermore, the system's limitations are described. With the limitations, an outline is presented of the differences between the final delivered system and the system described in the PRD \cite{PRD}. Lastly, instructions on how to set up the system, and run the program, are given. 
+
+\section{Delivered system} %Linnea
+%The delivered system consists of the following documents/parts: *tabell över dokumenten*
+
+%Software Product Features Backlog(SPF) - PUSS21413
+%Sprint log/plan (SP) - PUSS21414
+
+The system consists of the code based product as well as multiple documents that corresponds to the system in different ways. In table \ref{tab:deliveredSys} these documents, and how they relate to the delivered system, is presented. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|p{90mm}|}
+    \hline
+    Document & Document number & Version & Purpose in the system \\
+    \hline \hline
+    %SDP & PUSS21411 & 1.3 & \\ \hline
+    PRD & PUSS21412 & 1.21 & Contains the requirements of the system, and more. \\ \hline
+    STLDD & PUSS21415 & 1.29 & The high level design of the system \\ \hline 
+    SDD & PUSS21416 & N/A & The actual code base and its corresponding comments \\ \hline
+    SVVR & PUSS21417 & TODO & Comparisons of the code and the user stories from the PRD. Contains unit tests, integration tests and review protocols. \\ \hline
+    SSD & PUSS21418 & TODO & A description of the delivered system and how it differs from the ordered one \\ \hline
+   % PFR & PUSS21419 & TODO & \\ \hline
+    \end{tabular}
+    \caption{The documents, and their current version, related to the delivered system.}
+    \label{tab:deliveredSys}
+\end{table}
+
+
+\section{Limitations}
+%ingen text från exemplet?
+
+\subsection{System objective} %Alexander
+%The intention is that the delivered system should be used as a base for further development of web-based systems.  It is not meaningful to deliver the system to a real user as it is today, as the only functionality it includes is a possibility to login and logout.  This means that the system has not been tested in practice with real users.
+
+The objective of the delivered system is that it should be used as a base for further development. There is no intention to deliver the system to real users in its current state. This is because some functionality is not yet finalized, and the system has not been tested in practice with real users.
+
+\subsection{Differences compared to the PRD} %Alexander
+\subsubsection{Maven support}
+The PRD did not specify a requirement for Maven, but this is crucial for a functioning system.
+
+\subsubsection{Functional requirement F2: Driver registration}
+"A prospective user registering as a driver, or a rider and a driver must also register car brand, model, color, and licence plate number"\cite{PRD}. In the delivered version, drivers can register a car, however this is done in the submission window. When a user selects "driver" on the submissions page, they are asked to add a vehicle to the submission. If they haven't registered a car before, they have the option to add a new car. Once a car is added they can select it from a drop-down menu in any future submissions.
+
+\subsubsection{Functional requirement F8: Profile Details}\label{profile_details}
+"A logged in user should be able to see and edit some of their profile details"\cite{PRD}. The delivered system will not support users editing the profile details or a profile page. If a user needs something changed they must contact someone with admin and they would remove the old profile and replace it with a new profile.
+
+\subsubsection{Functional requirement F11: Upcoming travel}
+"A logged in user who is matched with a rider/driver needs to accept or decline matches with riders/drivers"\cite{PRD}. The delivered system does not support users accepting or declining matches. If there is a change of plans, the two users will have to contact each other via email or phone instead.
+
+\subsubsection{Functional requirement F12: Match notification}
+"When a user is matched with a driver/rider they should be notified in the web app"\cite{PRD}. The delivered system does not notify users once a match is achieved between a rider and a driver. Instead users will have to check their "Your routes" page for updates on their upcoming routes and matched routes.
+
+\subsubsection{Functional requirement F13: Admin log in}
+"As administrator of the system I should be able to log in and obtain extra privileges as administrator."\cite{PRD}. The administrator is able to log in and remove users as stated in the requirements. However, since it was not a requirement, the admin was never given the functionality to edit other user profile details. With the delivered version of the system not being able to allow users to edit their own profile details, it is important to note that neither the administrator nor a users can edit profile details. Should a user need their details changed, they would have to contact an admin and have their old profile removed and replaced with a new profile.
+
+\subsubsection{Performance Requirement Per1: Entering correct username and password}
+"A user who enters a correct username and password, once pressing the ”log in” button, should not wait longer than 2 seconds to see the submission page"\cite{PRD}. A user entering the correct username and password is logged in within 20 seconds, however, they are not directed to the submissions page as the main page. In the delivered system, the main page is a neutral page which offers the logged in user with a choice to select either "Create Route", "Your routes", or "User profile". This layout does not affect the core functionality of the system, but it does deviate from the user interface prototypes in Figure 4, 5 , 6, and 7, and some of the wording of the PRD\cite{PRD}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{ssdFigures/joe_smith.png}
+    \caption{The main page of the delivered system offers a logged in user with a choice to select either "Create Route", "Your routes", "User profile". This layout change does not greatly affect the core functionality of the system, but it does deviate from the user interface prototypes shown in the PRD.}
+    \label{fig:main_page}
+\end{figure}
+
+\subsubsection{Performance Requirement Per2: Entering incorrect username and password}
+"A user who enters an incorrect username and password, once pressing the ”log in” button, should not wait longer than 2 seconds to be prompted for another attempt"\cite{PRD}. If the username and password are incorrect the user is shown an error within 2 seconds. However, they might not be explicitly prompted for a new password since not much time was able to be allocated to specifying error messages.
+
+\subsubsection{Performance Requirement Per3: Notification of new match}
+"After a driver/rider is matched, their profile pages should update accordingly within 10 seconds"\cite{PRD}. As specified in Section \ref{profile_details}, the delivered version does not include a profile page. However, the match is displayed on the "Your routes" page within 10 seconds.
+
+\subsubsection{Reliability Requirement R1: User input}
+"The web-app should not crash or freeze due to user input"\cite{PRD}. With a small team there was not enough time to do the large scale testing which would guarantee that no user input would crash the system. However, no user input should crash the server, but it could freeze their browser session.
+
+\subsubsection{Usability Requirement U3: User browser and operating system}
+"The system should work the same for users using Microsoft Edge, Google Chrome, Mozilla Firefox, or Safari web browsers. It should also be independent from their operating system"\cite{PRD}. The delivered system does not perform well on Firefox due to some issues with sending POST-requests. Chromium based browsers is currently preferred.
+
+
+
+\section{Installation instructions} %Alexander
+\subsection{Setup instructions: Eclipse}
+\subsubsection{Initial setup}
+\begin{itemize}
+\item Download and install Eclipse from \url{https://www.eclipse.org/}
+\item Clone the repository: using "git clone \url{https://coursegit.cs.lth.se/alma.orucevic-alagic/} \\ 
+\url{etsn05-team1.git}"
+\item Start Eclipse (Version 4.21.0 or newer)
+\item Select the cloned repository as the workspace, press "Launch"
+\item Exit the Eclipse welcome window if there is any
+\item Go to file -> Import
+\item Select "Maven" and then "Existing Maven Projects", Press "Next"
+\item In the "Import Maven Project" window, select the root directory as "\url{etsn05-team1/base/server}"
+\item Back at the "Import Maven Project" window, click the "Add project(s) to working set" box
+\item Click "Finish"
+\end{itemize}
+
+\subsubsection{Starting the server}
+\begin{itemize}
+\item Make sure you are in the correct workspace
+\item Navigate to "etsn05-team1/base/server/src/main/java/se.lth.base.server"
+\item Select and run "BaseServer.java". On the first execution, this also sets up the database.
+\end{itemize}
+
+
+\subsection{Setup instructions:  Visual Studio Code}
+
+\subsubsection{Initial and starting the server}
+\begin{itemize}
+\item Download and install Visual Studio Code (\url{https://code.visualstudio.com/})
+\item Clone the repository: "git clone \url{https://coursegit.cs.lth.se/alma.orucevic-alagic/} \\
+\url{etsn05-team1.git}"
+\item Start Visual Studio Code (Version 1.61.1 or newer)
+\item Click the explorer in the top of the Visual Studio Code sidebar, select "Open Folder" and browse to the cloned repository. If prompted if you trust the creators, click "yes"
+\item Navigate to "\url{etsn05-team1/base/server/src/main/java/se/lth/base/server}"
+\item Select and run "BaseServer.java"
+\item Install any missing Java packages that Visual Studio Code suggests, and also a working Maven extension
+\end{itemize}
+
+
+\subsection{Logging in and registering new user}
+Once the server is started you can go to \url{(http://localhost:8080/login/login.html} and log in using one of the pre-existing credentials found in Table \ref{passwords}. To register a new user, go to \url{(http://localhost:8080/register/register.html}
+
+\begin{table}[h!]\label{passwords}
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+         Username & Password & Role \\\hline\hline
+         Admin & password & ADMIN \\\hline
+         Test & password & DRIVER \\\hline
+         Passenger & password & PASSENGER \\\hline
+        Driver & password & DRIVER \\\hline
+        Both & password & BOTH\\\hline
+    \end{tabular}
+    \caption{The available credentials after the first time setup of the system}
+    \label{tab:my_label}
+\end{table}
+
+\end{document}

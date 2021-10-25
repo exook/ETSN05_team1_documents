@@ -32,14 +32,15 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-\lhead{ Responsible: Alexander Ekman, Linnea Johnsson, and David Ravanelli \\ Date: \today}  \rhead{Document number: PUSS21419 \\ Version: 1.11}
+\lhead{ Responsible: Alexander Ekman, Linnea Johnsson, and David Ravanelli \\ Date: \today}  \rhead{Document number: PUSS21419 \\ Version: 1.15}
 \renewcommand{\headrulewidth}{0.5pt} 
-
 
 \title{PFR - Project Final Report}
 \author{Team 1}
 
 \begin{document}
+
+\pagenumbering{roman}
 
 \date{}
 \maketitle
@@ -76,6 +77,14 @@
     2021-10-19 & 1.10 & Create a "Dos and Don'ts" list & Alexander Ekman \\
     \hline
     2021-10-20 & 1.11 & Proofreading \& rewriting & Alexander Ekman, David Ravanelli \& Linnea Johnsson \\
+    \hline
+    2021-10-22 & 1.12 & Added time plan section for all phases based on formal review comments & Alexander Ekman \& Linnea Johnsson \\
+    \hline
+    2021-10-23 & 1.13 & Added real world comparisons based on formal review comments & David Ravanelli\\
+    \hline
+    2021-10-25 & 1.14 & Added descriptive text to empty sections & Alexander Ekman, Linnea Johnsson \& David Ravanelli \\
+    \hline
+    2021-10-25 & 1.15 & Added analysis of average work hours per person and SDP estimates & Alexander Ekman \& Linnea Johnsson \\
     \hline
     \end{tabular}
     \label{tab:history}
@@ -120,15 +129,17 @@
 %För alla data som skattades i tidplanen(I SDP!) ska verkligt utfall redovisas. Om tidplanen uppdaterats under projektets gång så ska jämförelse ske med de ursprungliga värdena(Det fick vi ej göra). Eftersom dokumentet skrivs innan sista veckan är färdig så finns inte metricsdata tillgänglig för sista veckan i projektet. Detta kan lösas antingen genom att inte ta med sista veckan i analysen, eller genom att använda skattade värden för sista veckan. 
 %Slutrapporten ska omfatta max 20 sidor (exklusive försättsblad, innehålls- förteckning, etc.). Målgruppen för en slutrapport har ofta ont om tid, samtidigt som det är viktigt att rapporten blir läst. Alltså ska omfånget vara begränsat och gäller att välja vad man presenterar och sättet man gör det på.
 
+\pagenumbering{arabic}
 \section{Introduction}
 %what will this report go through?
 This report will present an evaluation and overview of the project, its methodology, and its deliverables. The purpose of this is to provide useful information on what went well or bad, why that happened, and how to promote or avoid these situations in future projects. Lastly, the conclusion of this evaluation will be summarized for easy use in future projects.
 
 \section{Phase 1}
+Phase 1 was the first 2 weeks of the course. The main focus of this phase was the onboarding process of the teams, and the specification of the project via the PRD\cite{PRD} and SDP documents\cite{SDP}. 
 \subsection{Historical overview}
 %Vad är det som har hänt? Siffror, tabeller och diagram. Jämförelser och uppvisande av data.
 
-Phase 1 was the specification phase where the product requirements, specifications, and project planning was determined and documented in the Product Requirement Document (PRD)\cite{PRD}, and the Software Development Plan (SDP)\cite{SDP}. In this phase the product backlog (SPF1)\cite{SPF1} and the first Sprint Planning (SP1)\cite{SP1} were also produced. 
+Apart from setting up the teams, phase 1 was also the specification phase where the product requirements, specifications, and project planning was determined and documented in the Product Requirement Document (PRD)\cite{PRD}, and the Software Development Plan (SDP)\cite{SDP}. In this phase the product backlog (SPF1)\cite{SPF1} and the first Sprint Planning (SP1)\cite{SP1} were also produced. 
 
 In the middle of this phase, the whole development team met and discussed possible epics, user stories, and issues for the project. This discussion was seeded by drafts of the PRD \cite{PRD}. This discussion altered some issues in the draft product backlog, and added many new issues which were then put into the official first product backlog SPF1 \cite{SPF1}. During the same meeting the team also decided on which items to bring from the SPF1 into the first sprint, this is documented in the SP1\cite{SP1}. 
 
@@ -139,7 +150,7 @@ The phase ended with the first formal review where the team got feedback on the 
 \subsection{Evaluation \& suggestions of improvements }
 %Varför ser det ut som det gör? Analys av de siffror man samlat in. Varför tog det så lång tid i den fasen? Varför blev den modulen så snabbt klar?
 %Hur ska man göra för att förbättra de positiva trenderna och få bort de negativa trenderna? Process förbättring mm.
-
+This section contains an evaluation of the different events and data from phase 1 and suggestions of improvements where relevant. 
 \subsubsection{The joint product backlog and sprint backlog meeting}
 Using the PO's draft of the PRD as a springboard for discussing the first product backlog worked very well in getting a useful and effective discussion started. Presenting the PRD draft, creating the product backlog and the first sprint backlog in the very first meeting was very time efficient. However, it would have been beneficial if the PRD was closer to being finished when this meeting took place. This is because the complete use case diagram and list of requirements was a large source of epics and user stories for the product backlog. For this to be implemented, there needs to bee more time for the POs to work on the PRD and get feedback before the first sprint.
 
@@ -178,6 +189,61 @@ Regarding the team structure, feedback showed that the development team apprecia
 
 From the phase 1 review feedback, we improved the missing details in our documents and also outlined the team's structure and responsibilities more clearly. The scrum master would be responsible for all the meetings, taking notes and creating action points. This seemed like a good setup since the SM was the most intersected role. The architectures got the responsibility to manage the code reviews, since they had the main responsibility, and overview, of the codes structure and future development plans.
 
+\subsubsection{Time plan}
+%här kör vi planed time vs spent time per aktivitet/roll
+In section 5.1 in the SDP \cite{SDP} the project deliverables and development work was planned. The planning was in the form of a time estimate per activity, per phase, and per role type. In table \ref{tab:timeSpent1}, phase 1's time estimates for each activity summed up per role group is presented together with the reported time spent. 
+
+As seen in table \ref{tab:timeSpent1}, one can se that the "Git \& slack admin" activity does not have any time spent data. The reason for this was that the time reporting system had set categories that the team members could use when reporting their time, and this activity was not one of them. It is possible that it could be reported in category "Övrigt", but there is no way to be sure so this activity has been omitted. The fact that this category was planned for when the means to measure it was not available derives from two  main reasons. Firstly, the time reporting system was not set up when the time plan was created and secondly, it felt important to reflect in the planning that admin work takes time.  
+
+Furthermore, it can be noted that all activities' time estimations are off. This is can also bee seen in the summary in Figure \ref{fig:hours}. The reason for the deviations varies. One possible reason is that the team in this phase did not have the time reporting system available at this time, which could have hinder the team the habit to report all the time spent, and not just development work time spent. Another reason, especially when looking at the SDP and PRD, could be the miscalculation in deadline days, as will be described in table \ref{tab:deadlines1}.
+
+In section 5 in the SDP, the common course- and project work was also estimated. Since common course work is not directly related to the project the comparison with this estimate is omitted. The comparison with the common project work is also omitted in this report. The reason for this is that the common project work estimate mainly consisted of the planned hours of mandatory meetings (such as the review meetings) the project would have, but the time reporting did not support different kinds of meetings which makes the comparison irrelevant. 
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{l|l|l|l|l|l|l|}
+    \cline{2-7}
+    & \multicolumn{2}{c|}{PG} & \multicolumn{2}{c|}{SG} & \multicolumn{2}{c|}{DG} \\ \hline
+    \multicolumn{1}{|l|}{Activity} & Est. time & Time spent &  Est. time & Time spent & Est. time & Time spent        \\ \hline
+    \multicolumn{1}{|l|}{Git \& slack admin} & 6 & N/A & 1 & N/A  & 4 & N/A\\ \hline
+    \multicolumn{1}{|l|}{SDP} & 24 & 10 & 1 & 0 & 4 & 0 \\ \hline
+    \multicolumn{1}{|l|}{PRD} & 24 & 10 & 1 & 0 & 4 & 0 \\ \hline
+    \multicolumn{1}{|l|}{SPF} & 6 & 2,5 & 2 & 0,6 & 8 & 0\\ \hline
+    \multicolumn{1}{|l|}{SP} & 3 & 2,5 & 2 & 0 & 8 & 0 \\ \hline
+    \multicolumn{1}{|l|}{STLDD} & 0 & 0 & 0 & 5 & 0 & 0 \\ \hline
+    %\multicolumn{1}{|l|}{SDD} &  &  &  &  &  & \\ \hline    
+    %\multicolumn{1}{|l|}{SVVR} &  &  &  &  &  & \\ \hline
+    %\multicolumn{1}{|l|}{SSD} &  &  &  &  &  & \\ \hline
+   % \multicolumn{1}{|l|}{PFR} &  &  &  &  &  & \\ \hline
+   % \multicolumn{1}{|l|}{Development} &  &  &  &  &  & \\ \hline    
+\end{tabular}
+\caption{The planed, and the actual, time spent for each deliverable in phase 1}
+\label{tab:timeSpent1}
+\end{table}
+
+%här kör vi planed deadlines vs faktiskt klar med dokumentet
+In the SDP, the different deliverables and other major events were also planned out in a Gantt chart. Based on the Gantt chart in section 5.2 in the SDP \cite{SDP} table \ref{tab:deadlines1} was created in order to compare the planed finalization date for the event, and when they were actually were finalized. Notably, as seen in table \ref{tab:deadlines1}, the activity to set up EPUSS was never finalized. This will be discussed further below in section \ref{project_tools}. Furthermore, it is worth noting that the PRD and the SDP were finalized almost two weeks after it was planned to be. The reason for this is partly because of the PG's misunderstandings of how the revision of the documents was planned. This, in some ways, also explains the disparity between the estimated and spent time seen in table \ref{tab:timeSpent1}.
+
+In the SDP section 5.3, an attempt to plan out the epics, user stories, and issues was made. This attempt was in the form of a Gantt chart over the issues chosen for sprint 1. The PG had misunderstood how the backlog was to be created and groomed, which made impossible for the team to produce these Gantt chart for all three sprints. Due to this, a comparison between the estimated and actual deadlines for the issues planned in section 5.3 in the SDP will be omitted. 
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Deliverable & Planed finalization date & Actual finalization date \\ \hline\hline
+    Setting up Gitlab & 12/9/2021 & 12/9/2021 \\ \hline
+    Setting up Slack & 5/9/2021 & 5/9/2021 \\ \hline
+    Setting up Epuss & 20/9/2021 & N/A \\ \hline
+    PRD & 15/9/2021 & 27/9/2021 \\ \hline
+    SDP & 15/9/2021 & 27/9/2021 \\ \hline
+    SPF1 & 10/9/2021 & 10/9/2021 \\ \hline
+    SP1 & 10/9/2021 & 10/9/2021 \\ \hline    
+    \end{tabular}
+    \caption{The planed, and the actual, finalization date for each deliverable or major event in phase 1}
+    \label{tab:deadlines1}
+\end{table}
+
+
 \subsubsection{Project management tools}\label{project_tools}
 %Förvirringen kring Jira, oneclick, gitlab, epuss osv osv
 
@@ -210,6 +276,8 @@ A premium project management tool would have had time reporting available from t
 In hindsight, we would have opted for prioritizing a project management tool which had more SCRUM centered functionality. Either by using a paid plan, or setting our group size to 10 in order to use the JIRA software. Even opting for the official Gitlab instead of a locally hosted server could have been beneficial because some functionality such as exporting issue lists and requesting new passwords were not functioning in our version.
 
 \section{Phase 2} %Sprint 1
+Phase 2 included sprint 1, which was the first sprint. It also included a lot of finalization of the Phase 1 deliverables such as the SDP\cite{SDP} and the PRD\cite{PRD}.
+
 \subsection{Historical overview}
 Phase 2 started off with a stand up meting, the Monday of sprint 1. We started off based on the sprint backlog created with the team in phase 1. We estimated that we would be able to finish 91 story points during the sprint, as shown in figure \ref{fig:Burndown1}. Each issue for the sprint is given an arbitrary weight based on the time the developers thing the issue will need, the value of the weight is the amount of story points for that one issue. The action point from the meeting was that all the sub-teams should meet up and start to plan their assigned issues. During the phase we had stand up meetings on zoom at the beginning and end of each week. During the days in between we had stand up meetings everyday on slack through text. During a meeting between Alma, all the project owners and all the scrum masters decided to use an excel sheet template for time reporting. The Friday of the first week of  sprint 1, phase 2, a formal review was conducted on the deliverables from Phase 1, i.e the PRD, SDP, SPF1, and SP1. During phase 2 the team produced the Software Top Level Design Document (STLDD) \cite{STLDD}, the SPF2 \cite{SPF2}, and the SP2 \cite{SP2}. These documents were to be the topic of discussion during the second formal review coming in phase 3. Phase 2 ended with a sprint retrospective.
 
@@ -220,7 +288,7 @@ Phase 2 started off with a stand up meting, the Monday of sprint 1. We started o
     \label{fig:Burndown1}
 \end{figure}
 
-During the sprint retrospective we evaluated the sprint burndown chart as shown in figure \ref{fig:Burndown1}. We recognized that we had underestimated our issues and story points. In the SDP risk analysis section we had already outlined what we need to do if we underestimated sprints. With this information we created action points on how to proceed. The amount of issues needed for the sprint was wrongly estimated but also how many story points that the team would be able to complete.  Out of the estimated 97 story points we only completed 57, i.e. a 62.6 percent completion. During the sprint it is worth noting that we also added a lot of new issues that we had not accounted for in the original SP1, and in some cases not even in the PRD or the SPF1. 
+During the sprint retrospective we evaluated the sprint burndown chart as shown in figure \ref{fig:Burndown1}. We recognized that we had underestimated our issues and story points. In the SDP risk analysis section we had already outlined what we need to do if we underestimated sprints. With this information we created action points on how to proceed. The amount of issues needed for the sprint was wrongly estimated but also how many story points that the team would be able to complete.  Out of the estimated 97 story points we only completed 57, i.e. a 62.6 percent completion. During the sprint it is worth noting that we also added a lot of new issues that we had not accounted for in the original SP1, and in some cases not even in the PRD or the SPF1.
 
 A total of 119 estimated new story points were added. Meaning that we more than doubled our original estimation for the sprint. This happened very early on in the sprint and can be seen in the yellow line that spikes up on day 1 in figure \ref{fig:Burndown1}. During the retrospective meeting we also collected data of team satisfaction as shown in figure \ref{fig:Satisfaction1}. At the phase 2 review (scheduled in the middle of Phase 3) we discussed the STLDD, the SPF2, and the SP2. From the feedback we were told to adjust some small details. These changes were done and the documents were resubmitted, closing the phase 2 chapter.  
 
@@ -232,9 +300,58 @@ A total of 119 estimated new story points were added. Meaning that we more than 
 \end{figure}
 
 \subsection{Evaluation \& suggestions of improvements}
-\subsubsection{Data and team structure}
+This section contains an evaluation of the different events and data from phase 2 and suggestions of improvements where relevant.  
 
+\subsubsection{Data and team structure}
 The team satisfaction was on average 7,125 (on a scale of 1-10 were 1 is the lowest and 10 is the highest) as shown in figure \ref{fig:Satisfaction1}. We were happy to already have a high team satisfaction. Our analysis is that the team was happy about the creation of sub-teams, and that they felt comfortable in the current team structure. This led to a decision to continue with the sub-teams, which meant that the team could further develop the structure around sub-teams and that the scrum master helped promote the sub-teams structure. We hoped that this would keep the positive trend and increase the team satisfaction even more for the next sprint. The team satisfaction included the developers and the architects, but not the PG. It would have been interesting, and quite relevant, to have had a separate satisfaction score for the PG.
+
+\subsubsection{Time plan}
+%här kör vi planed time vs spent time per aktivitet/roll
+In table \ref{tab:timeSpent2} the estimated and spent time difference from phase 1 is inverted. As discussed in \ref{POBurden} there is still a disparity between estimated and spent time. It is also apparent that the PG spent more time during phase 2 than in phase 1 on these documents, even though the opposite was planned.  
+
+From both table \ref{tab:timeSpent2} and table \ref{tab:timeSpent1} from phase 1, a correlation can be extracted. That is, it seems like the DG only reports development work since they have not reported any other time spent in phase 1 and 2 in relation to the project activities. This is a little misleading since they also helped develop the other deliverables through discussions and feedback. One explanation for this could be that this time spent by the DG either is misrepresented through the "Möte" category, or that it is not reported at all. 
+
+In the activity "Development" both time reporting categories "Testarbete" and "Utvecklingsarbete" has been reported on spent. The reason for this is that no activity "Testing" was planned and estimated, as this was planned to be done continuously within development. 
+
+In this phase it is also clear that the SG spent more time on all activities except for the STLDD. This activity had no estimated time planned in phase 1, but in table \ref{tab:timeSpent1} it can be seen that the SG spent five hours. This somewhat makes up for the disparity. Furthermore, it is probable that some of the time reported on "Development" actually was needed in order to efficiently write the STLDD.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{l|l|l|l|l|l|l|}
+    \cline{2-7}
+    & \multicolumn{2}{c|}{PG} & \multicolumn{2}{c|}{SG} & \multicolumn{2}{c|}{DG} \\ \hline
+    \multicolumn{1}{|l|}{Activity} & Est. time & Time spent &  Est. time & Time spent & Est. time & Time spent        \\ \hline
+    \multicolumn{1}{|l|}{Git \& slack admin} & 3 & N/A & 0,5 & N/A  & 2 & N/A\\ \hline
+    \multicolumn{1}{|l|}{SDP} & 15 & 31 & 0 & 0 & 0 & 0 \\ \hline
+    \multicolumn{1}{|l|}{PRD} & 15 & 43 & 0 & 0 & 0 & 0 \\ \hline
+    \multicolumn{1}{|l|}{SPF} & 1,5 & 2 & 0,5 & 1 & 2 & 0\\ \hline
+    \multicolumn{1}{|l|}{SP} & 1,5 & 2 & 0,5 & 0,8 & 2 & 0 \\ \hline
+    \multicolumn{1}{|l|}{STLDD} & 1,5 & 0 & 12 & 2,4 & 8 & 0 \\ \hline
+    %\multicolumn{1}{|l|}{SDD} &  &  &  &  &  & \\ \hline    
+    %\multicolumn{1}{|l|}{SVVR} &  &  &  &  &  & \\ \hline
+    %\multicolumn{1}{|l|}{SSD} &  &  &  &  &  & \\ \hline
+   % \multicolumn{1}{|l|}{PFR} &  &  &  &  &  & \\ \hline
+   \multicolumn{1}{|l|}{Development} & 0 & 0 & 10 & 28,8 & 80 & 63,6\\ \hline    
+\end{tabular}
+\caption{The planed, and the actual, time spent for each deliverable in phase 2}
+\label{tab:timeSpent2}
+\end{table}
+
+%här kör vi planed deadlines vs faktiskt klar med dokumentet 
+Similarly to phase 1, phase 2 had deliverables and events that had a planned deadlines. These can be seen in table \ref{tab:deadlines2}. As with the SDP and the PRD from phase 1, the STLDD has a much later finalization date than planed. The reason for this is that when planning the revision date was not taken into consideration. It can also be noted that the SPF2 and the SP2 had later finalization dates in this phase than their counterpart from phase 1. The reason for this was that we started of the new sprint, i.e. sprint 2, with it's sprint planning meeting instead of having it before the current sprint ended. The idea behind this was to first have the sprint retrospective meeting before the planning meeting, and since the retrospective meeting took place the last Friday of sprint 1 the sprint planning meeting happened on the first Monday of sprint 2. Lastly, the deadline to replace EPUSS as the time reporting tool was set to before the end of phase 2. This deadline was met. 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Deliverable & Planed finalization date & Actual finalization date \\ \hline\hline
+    STLDD & 29/9/2021 & 6/10/2021 \\ \hline
+    SPF2 & 24/9/2021 & 27/9/2021 \\ \hline
+    SP2 & 24/9/2021 & 27/9/2021 \\ \hline
+    Replace EPUSS & 26/9/2021 & 21/9/2021 \\ \hline
+    \end{tabular}
+    \caption{The planed, and the actual, finalization date for each deliverable or major event in phase 2}
+    \label{tab:deadlines2}
+\end{table}
 
 \subsubsection{Dealing with Large Issues}
 As discussed in the sprint retrospective, we had wrongly estimated the amount of issues and story points. Based on the information in the risk analysis in the SDP, we should evaluate and split big issues into smaller issues to make it easier to estimate their story points and the amount of issues. The issues that had not yet been completed were pushed onto the next sprint. Do note that even though there was a large offset between Remaining Effort and Ideal trend in Figure \ref{fig:Burndown1}, the slope of the remaining effort after day 1 is similar to that of the ideal trend. This indicates that the discrepancy has more to do with inexperience creating Epics and user stories, rather than the ability to plan the work and get a certain number of issues done per day.
@@ -250,6 +367,8 @@ The feedback on the standup meeting setup was positive, so this continued for th
 Another positive take-away from this phase was the weekly Monday lunch meetings with Alma, where scrum masters and project owners from all the groups participated. In one of these we shared our own excel template for the burndown chart and received another template for the time reporting from another group. This shows that these meetings are very valuable and helps all the teams when we share our knowledge together. The template saved our team a lot of work with the time reporting. Although these meetings were valuable, it is worth noting that the time for these meetings were set to 12:30-13:30 without input from the POs and SMs. The mandatory nature of this meeting meant that POs and SMs did not get a Monday lunch break for 7 weeks. This was both stressful and bad for morale. In the future we would suggest using meeting tools like LettuceMeet to plan these meetings.
 
 \section{Phase 3} %sprint 2
+Phase 3 included sprint 2, this was the least document heavy phase so a lot of time could be spent on the development team moving forward. 
+
 \subsection{Historical overview}
 Sprint 2 started with a sprint planning meeting. Based on the previous sprint retrospective we decided that we needed to split issues into smaller issues. Each sub-team were also given greater autonomy to choose which issues they wanted to work on. With this information, the backlog, and the sprint log we estimated that we would finish 185 story points this sprint. In this sprint there was no formal review, but the deliverables was the Software Detailed Design Document (SDD) as well as the SPF3 \cite{SPF3} and the SP3 \cite{SP3}. The SDD was the code base and the comments related to it.  
 
@@ -272,19 +391,67 @@ During the sprint retrospective we evaluated the sprint burndown chart as shown 
 \end{figure}
 
 \subsection{Evaluation \& suggestions of improvements} 
-
+This section contains an evaluation of the different events and data from phase 3 and suggestions of improvements where relevant.  
 
 \subsubsection{Data and team structure}
 To put it in perspective we had an 89.7 percent completion of the originally estimated story point in sprint 2, compered to the 62.6 percent completion in Sprint 1. Furthermore, when adding the new issues for each sprint this improvement is even more obvious. During sprint one the team completed 26,4 percent of the total story points when taking the new issues into account, while in sprint 2 the team completed 79,0 percent. Another contributing factor to this improvement is that the team now had gotten used to the structure of the project. They have also improved in their work which shows in the data. 
 
 The team satisfaction was roughly the same for Sprint 1 and Sprint 2. This is a good result since it was already high in Sprint 1. It shows that we were doing something right and that the team structure is well received by the developers. The scrum master noticed that in both Sprint 1 and Sprint 2 two people had given a lower score than the rest of the team. We concluded that if we could raise these developers scores we would increase the average of the team satisfaction considerably. Thus, the scrum master contacted the two people that gave a lower score. The SM concluded with them that the main problems that made their satisfaction lower was that there were a lot of blocked merge requests and unclear instructions on what to work on. The two developer took care of this themselves after the discussion with the SM. They presented some suggestions for improvements to the sub-teams, these were included in the next sprint.
 
-\subsection{Employing tactics from the SDP}
+\subsubsection{Time plan}
+%här kör vi planed time vs spent time per aktivitet/roll
+For the second sprint, we had estimated that all roles would spend time on the SDD as seen in table \ref{tab:timeSpent3}. This was not optimal since the SDD is not a document like the others, the SDD is really the code and comments developed. So time that should have gone into SDD  was included in "Development" instead. The estimation of the SDD was a misunderstanding from the PG's, not having understood what the SDD comprised of when planning for it. 
+
+The consequences of the planned deadline to actual finalization date disparity can be seen in this phase as well. This is mainly seen where the STLDD has much more time spent than estimated for in table \ref{tab:timeSpent3}. Also, the PFR had 16 hours estimated during this phase but no time was actually spent on this activity. A reason for this could be that the PG had a backlog of other things to work on after the heavy burden during the first and second phase.  
+
+The "Development" activity in this phase has less time spent on it than estimated. Much like in former phases this can probably be traced back to inadequate time reporting, both in regards to bad habits on actually doing the reporting and in regards to the time reporting categories not being segmented enough. An example of this could be if the front-end team has a meeting to discuss a certain issue. Then the question arises if that should be registered as a meeting, which is was, or as development on an issue, which it also was. In retrospect, this should have been made more clear in the SDP but due to the time reporting not being implemented when the SDP was created this was not possible. 
+ 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{l|l|l|l|l|l|l|}
+    \cline{2-7}
+    & \multicolumn{2}{c|}{PG} & \multicolumn{2}{c|}{SG} & \multicolumn{2}{c|}{DG} \\ \hline
+    \multicolumn{1}{|l|}{Activity} & Est. time & Time spent &  Est. time & Time spent & Est. time & Time spent        \\ \hline
+    \multicolumn{1}{|l|}{Git \& slack admin} & 3 & N/A & 0,5 & N/A  & 2 & N/A\\ \hline
+  %  \multicolumn{1}{|l|}{SDP} & 15 & 31 & 0 & 0 & 0 & 0 \\ \hline
+   % \multicolumn{1}{|l|}{PRD} & 15 & 43 & 0 & 0 & 0 & 0 \\ \hline
+    \multicolumn{1}{|l|}{SPF} & 1,5 & 2 & 0,5 & 0 & 2 & 0 \\ \hline
+    \multicolumn{1}{|l|}{SP} & 1,5 & 2 & 0,5 & 0 & 2 & 0 \\ \hline
+    \multicolumn{1}{|l|}{STLDD} & 0 & 3,9 & 8 & 20 & 2 & 0 \\ \hline
+    \multicolumn{1}{|l|}{SDD} & 1,5 & N/A & 2 & N/A & 16 & N/A\\ \hline    
+    %\multicolumn{1}{|l|}{SVVR} &  &  &  &  &  & \\ \hline
+    %\multicolumn{1}{|l|}{SSD} &  &  &  &  &  & \\ \hline
+    \multicolumn{1}{|l|}{PFR} & 16 & 0 & 0 & 0 & 0 & 0\\ \hline
+   \multicolumn{1}{|l|}{Development} & 0 & 0 & 32 & 18 & 160 & 107,5 \\ \hline    
+\end{tabular}
+\caption{The planed, and the actual, time spent for each deliverable in phase 3}
+\label{tab:timeSpent3}
+\end{table}
+
+%här kör vi planed deadlines vs faktiskt klar med dokumentet
+The deliverables for this phase was the SDD, the SPF3 and the SP3. For these, all deadlines were met as seen in table \ref{tab:deadlines3}. There was no revision deadline for the SDD, which meant that the planned finalization date was possible to meet. For the SPF3 and the SP3 the sprint planning meeting had been planed sequentially during the same day leading to the planned deadline being met. 
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Deliverable & Planed finalization date & Actual finalization date \\ \hline\hline
+    SDD & 13/10/2021 & 13/10/2021 \\ \hline
+    SPF3 & 10/10/2021 & 8/10/2021 \\ \hline
+    SP3 & 10/10/2021 & 8/10/2021 \\ \hline
+    \end{tabular}
+    \caption{The planed, and the actual, finalization date for each deliverable or major event in phase 3}
+    \label{tab:deadlines3}
+\end{table}
+
+\subsubsection{Employing tactics from the SDP}
 The most important improvement of this sprint was our estimation of story points and amount of issues. We realised that when we had written more detailed issues and split them up, it was easier to estimate the amount of story points and also how many issues that were needed from the beginning. This was something that we tried to continue to do and improve even more in Sprint 3. 
 
 During this sprint we had better teamwork within, and between, the sub-teams. With the action points from the SDP and the good teamwork we solved the problem with the blocking issue. The importance of the SDP's risk analysis was made clear when we handled the underestimation of the story points and the blockage problem. Both these situations points to the fact that we had done a great planning before the sprints on how to handle problematic situations. We decided to try to continue this positive trend for the upcoming last sprint by promoting the teams to raise concerns early and to rely on our good planning.
 
 \section{Phase 4} %sprint 3
+Phase 4 included sprint 3, which was the final sprint. For the team overall this was the most stressful sprint. The POs and SM had to start wand finish the PFR and SSD\cite{SSD}, whilst the architects were busy with the SVVR\cite{SVVR}. Having such core components of the team management busy with documentation was not optimal when the development team was crunching to finish a final product version. 
+
 \subsection{Historical overview}
 We started the sprint with a sprint planning meeting. This sprint planning meeting was a little bit different compared to previous sprint plannings. This is because in this sprint we needed to focus on delivering the final product to the customer. This meant that we now had to prioritize issues that would lead to a final product. We decided that each sub-team would meet before the team meeting and decide what type of issues they needed in the sprint to deliver the final product. In addition to the final product, the team were also to produce the Software Verification and Validation Report (SVVR) \cite{SVVR}, the System Specification Document (SSD) \cite{SSD}, and Project Final Report in of itself.
 
@@ -334,7 +501,7 @@ The scrum master also felt that he had enough work during the project. The proje
 \end{figure}
 
 \subsection{Evaluation \& suggestions of improvements}
-
+This section contains an evaluation of the different events and data from phase 4 and suggestions of improvements where relevant.  
 \subsubsection{Data \& team structure}
 The reason for the new issues being added during the sprint was because of the algorithm implementation. After the meeting with the customer the team got a better idea on what was needed for implementing the algorithm. This meant a lot of new issues appeared. Everything started when we realised that we would not be able to implement an advance algorithm in time. This meant that we needed to know what the bare minimum algorithm complexity was acceptable for the customer. This should preferably had been done before the sprint, so that we could estimate those new issues in the sprint. A better plan and communicating with the customer earlier could have avoided this situation. On the other hand, we realised this at the very beginning of the sprint and raised the concerns early during the phase to the customer. Unfortunately 1-2 days between each meeting makes the time go by fast and before everything was resolved we were 4-5 days into the sprint. The metrics for the burn down chart were affected negatively by this, but in the end a basic version of the algorithm was implemented in time, which met the customer's requirements. Without the new issues this would not have been possible.
 
@@ -347,14 +514,59 @@ The first sprint deviates from the estimated story points. That is because a lot
 
 The team satisfaction improved a lot on sprint 3. Previous  sprints had an average team satisfaction of roughly 7.1, this sprint had 8.1. This is a very positive improvement. Thanks to the metrics we could recognize which developers felt less happy. They themselves then solved it very well within their own teams, after the problem was raised by the SM. The developers' analysis was that they by this sprint had a better prioritisation process due to the emerging deadline for the product. They also had a better cooperation between the sub-teams were they had good communication which led to a better distribution of the work load. All of this made the developers feel more happy about the last sprint as shown in the data.
 
+\subsubsection{Time plan}
+%här kör vi planed time vs spent time per aktivitet/roll
+In table \ref{tab:timeSpent4} the estimation for the last phase is presented together with the actual time spent. Worth noting in this phase is that the estimation is regarding two full weeks, while the time spent reporting only represents one week. This was because the metrics needed to be finalized in order to create the PFR in time for the deadline. A consequence of this is that the comparison in this phase is not off. 
+
+One thing that stands out in table \ref{tab:timeSpent4} is that all the old deliverables had estimated time planned. This was due to the misunderstanding that all documents were to be re-submitted at the end of the project. It is also noticeable that the DG were to spend some time on the SVVR to help divide the burden of the SG, but the SG took tare of this deliverable themselves. Some time was spent by the DG on the deliverables, but as mentioned earlier, the DG in generall has only reported time on the "Development" activity. 
+
+Even though the last week is not reported, the spent time on the SSD has surpassed the estimated time for the PG, and the PFR spent reported time is not far from is estimate. The same can be seen with the SGs and DGs spent reported time on development. This can be seen as quite alarming since the trend for this team was to spend the majority of an activity's time closer to its deadline, meaning it has been missed in this data representation. 
+ 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{l|l|l|l|l|l|l|}
+    \cline{2-7}
+    & \multicolumn{2}{c|}{PG} & \multicolumn{2}{c|}{SG} & \multicolumn{2}{c|}{DG} \\ \hline
+    \multicolumn{1}{|l|}{Activity} & Est. time & Time spent &  Est. time & Time spent & Est. time & Time spent        \\ \hline
+    \multicolumn{1}{|l|}{Git \& slack admin} & 3 & N/A & 0,5 & N/A  & 2 & N/A\\ \hline
+    \multicolumn{1}{|l|}{SDP} & 3 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \multicolumn{1}{|l|}{PRD} & 3 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \multicolumn{1}{|l|}{SPF} & 1,5 & 0 & 0,5 & 0 & 2 & 0 \\ \hline
+    \multicolumn{1}{|l|}{SP} & 1,5 & 0 & 0,5 & 0 & 2 & 0 \\ \hline
+    \multicolumn{1}{|l|}{STLDD} & 1,5 & 0 & 2 & 0 & 0 & 0 \\ \hline
+    \multicolumn{1}{|l|}{SDD} & 1,5 & N/A & 0 & N/A & 8 & N/A \\ \hline    
+    \multicolumn{1}{|l|}{SVVR} & 1,5 & 0 & 4 & 3,9 & 16 & 0 \\ \hline
+    \multicolumn{1}{|l|}{SSD} & 12 & 14,5 & 1 & 0 & 4 & 0,3\\ \hline
+    \multicolumn{1}{|l|}{PFR} & 48 & 32 & 1 & 0 & 4 & 0\\ \hline
+   \multicolumn{1}{|l|}{Development} & 0 & 0 & 24 & 8,6 & 96 & 73,8 \\ \hline    
+\end{tabular}
+\caption{The planed, and the actual, time spent for each deliverable in phase 4}
+\label{tab:timeSpent4}
+\end{table}
+
+%här kör vi planed deadlines vs faktiskt klar med dokumentet 
+For the last phase, three major documents were to be produced and turned in on the same day, as seen in table \ref{tab:deadlines4}. In order to create these the metrics needed to be updated. The SM had continuously worked on these throughout the project, but these had to be locked in and polished in order for the PFR to be created. This table also included the event to update documentation, which was a misunderstanding from the POs' part, since no old documentation needed to be updated after their final hand in. After the final review the SVVR and the PFR needed to be updated and handed in once more, while the SSD was deemed finalized. This re-submition was once again something that had not been taken into account when planning for the documentations finalization dates.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Deliverable & Planed finalization date & Actual finalization date \\ \hline\hline
+    SSD & 22/10/2021 & 22/10/2021 \\ \hline
+    SVVR & 22/10/2021 & 25/10/2021 \\ \hline
+    PFR & 22/10/2021 & 25/10/2021 \\ \hline
+    Updating doc. \& metrics & 22/10/2021 & 20/10/2021 \\ \hline
+    \end{tabular}
+    \caption{The planed, and the actual, finalization date for each deliverable or major event in phase 4}
+    \label{tab:deadlines4}
+\end{table}
+
 \subsubsection{Continuously updated documentation}
 %For the architects sake, there was a mishap in communication that resulted in them spending time on unnecessarily updating the STLDD after its final hand-in. They believed, as did the PG for quite some time, that documentation should be kept up to date even after they were handed in after their formal review. If it had been made clear in the PH that this was not the case, this could have been avoided.
 Since the architects were not invited to the weekly PO+SM meetings, this resulted in them spending time updating the STLDD even though it was not expected to be continuously updated. The architects believed, as did the PO+SM for quite some time, that the documentation should be kept up to date after they were handed in. If the PH book would have stated that this was not the case, this could have been avoided.
 
-
-
 \subsubsection{The List of Forgotten Issues} \label{forgotten}
-In the middle of phase 4 the product owners and scrum master found an interesting sub group of issues in the product backlog. If the issues were sorted on open issues, which were not assigned to sprint 3, the list shown in Figure \ref{fig:forgotten_issues} appeared. At first, this list appears daunting, with core functionality such as "1.2.1 Users log in using email" and "If a user is a driver, they register car brand, model, color, and licence plate". This list of issues was shown to the team during a meeting, where it was concluded that it is a relic of multiple different things, mostly related to the ongoing attempt of using the GitLab issue tracker as an over all Scrum project management tool.
+In the middle of phase 4 the product owners and scrum master found an interesting sub group of issues in the product backlog. If the issues were sorted on open issues, which were not assigned to sprint 3, a list 13f seemingly "forgotten issues" appeared. At first, this list appears daunting, with core functionality such as "1.2.1 Users log in using email" and "If a user is a driver, they register car brand, model, color, and licence plate". This list of issues was shown to the team during a meeting, where it was concluded that it is a relic of multiple different things, mostly related to the ongoing attempt of using the GitLab issue tracker as an over all Scrum project management tool.
 
 For example, "1.2.1 Users log in using email" was an issue which was created for the PRD as this is a vital part of the product backlog. However, the login functionality was already implemented in BASE. So this already closed issue was not assigned to sprint 1, nor was it closed since this would inflate the metric of the team velocity. The issue could have been revived as the transition from username to email was implemented, but at this point such an old issue was lost in the now much longer list of issues. The effort needed to add small issues such as this was often too great as discussed in section \ref{project_tools}.
 
@@ -363,16 +575,31 @@ Big issues such as "3.1.1 Matches are made when a vehicle route is created, and 
 Instead of just dragging issues to "to-do" during sprint planning, we could have assigned people immediately. This would give the sub-teams less autonomy but make sure no issues fell through the cracks. 
 %More product backlog grooming. Bad software.
 
-\begin{figure}[H]
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[scale=0.6]{pfrFigures/forgotten_issues.png}
+%    \caption{The list of open issues which not assigned to Sprint 3, with 1 week left of sprint 3.}
+%    \label{fig:forgotten_issues}
+%\end{figure}
+
+\section{Summary of time plan}
+Each section above has presented an analysis of the time plan, the estimated and actual time spent on different tasks. This section provides a general overview of that information. As seen in the bottom of Figure \ref{fig:hours}, the work for both SG and DG was mostly slightly overestimated. At its worst, PG in phase 1 and DG in phase 3 had an estimated 1 hour more per day per person. This is not a bad overestimation considering that this is the team's first project. Also, it is often better to overestimate the time needed than underestimating it. Please note, that for this figure, the estimated time for phase 4 was divided by 2. This is to accommodate the fact that time reporting was suspended after half the phase duration. Therefore there might be some discrepancies between Figure \ref{fig:hours} and the information presented in previous sections. Also, Figure \ref{fig:hours} reports the hours per person, not per group.
+
+The work for PG was overestimated in phase 1 and grossly underestimated in phase 2. This is likely due to the revision of the phase 1 deliverables not being included in the original estimate. The main take-away from this and Figure \ref{fig:hours} is that the the work group with the poorest estimation (PG) was also the most overworked group, as seen in the top of Figure \ref{fig:hours}. If an estimation is well done, unsustainable work loads will be noticed in the planning phase and dealt with there. Leading to a more even workload for the whole project.
+
+
+\begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.6]{pfrFigures/forgotten_issues.png}
-    \caption{The list of open issues which not assigned to Sprint 3, with 1 week left of sprint 3.}
-    \label{fig:forgotten_issues}
+    \includegraphics[scale=0.7]{pfrFigures/hours.PNG}
+    \caption{ The top and middle plot shows the average amount of work hours done per person from the actual time reporting (top), and from the estimates in the SDP\cite{SDP}(middle). The difference between the two is shown in the bottom plot. Note that these plots only include tasks which were included in the SDP estimates. Which means that hours categorized under "Meetings" and "Miscellaneous" is not included.}
+    \label{fig:hours}
 \end{figure}
 
 \section{Summary and Future Outlook}
 
 We had three main events that we had to deal with during the different phases. Firstly, the underestimation of story points and amount of issues. Secondly, the blocking issue and lastly, the team satisfaction. The first and second problem were dealt with by tracking the metrics and using our SDP risk analysis. The third problem was solved by tracking the metrics and having cooperation between the scrum master and the developers. These three examples show that the team overall worked in an agile fashion when faced with challenges. %This shows that the team followed the scrum structure and also how well the scrum method works.
+
+All of these problems can occur in a "real life" industry project. The underestimation of story points would be common at some point in every project. The more inexperienced a team is, the more common this problem will be. Since this would happen in every project it is important that companies have a good structure on how to handle it. The role of the scrum master would be very important to track this metrics and catch it early on so they can tackle the problem. We also think that the second problem of issues blocking each other would be very common. Here, the company also needs a good structure. When a blocking issue appears, the developers need to have something else to work on. Otherwise the whole team will be blocked until the issue is resolved. Lastly, for our third problem, we think the team satisfaction will be a problem if the company does not care about the team and their problems. What differentiates this problem from the rest, is that we do not think companies would even be aware that this problem exists. Since they might not be tracking the team satisfaction from the beginning. An additional problem we had, was that the metrics were tracked manually. We think that in the "real world" (hopefully) companies would supply their teams with the right tools and buy the appropriate software. 
 
 The value of the project owners was apparent by the good planning and documentation, for example the risk analysis and structuring of the product backlog. The value of the scrum master became very clear when we could track metrics and early on catch problems. The metrics were also used in the sprint planning and in the sprint retrospective in order to improve both the way we planed and worked as a team.  The cooperation between the scrum master and the developers in the scrum methodology was also useful. This was shown when the team satisfaction problem occurred and then got resolved by the developers for sprint 3.
 
@@ -403,6 +630,7 @@ In an effort to make the key outcomes of this project final report more accessib
     \item Do use the risk management developed in the SDP
     \item Do keep an eye on forgotten issues
     \item Do cycle students between the different roles
+    \item Do decide with the team what kind of work goes into what time reporting category. For example, a meeting regarding a code issue should be categorized as development, not meeting.
 \end{itemize}
 
 
